@@ -90,9 +90,9 @@ export default function LearnPage() {
             <p style={{ color: '#94a3b8', marginBottom: '1.5rem', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step2.desc')}
             </p>
-            <div style={{ background: 'rgba(0,0,0,0.2)', padding: '1.25rem', borderRadius: 'var(--radius-md)', display: 'flex', gap: '1rem', alignItems: 'flex-start', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <div style={{ background: 'rgba(245, 158, 11, 0.1)', padding: '1.25rem', borderRadius: 'var(--radius-md)', display: 'flex', gap: '1rem', alignItems: 'flex-start', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
               <Zap size={20} style={{ color: 'var(--warning)', marginTop: '2px', flexShrink: 0 }} />
-              <p style={{ fontSize: '0.9rem', color: '#cbd5e1', margin: 0, lineHeight: 1.5 }}>
+              <p style={{ fontSize: '0.9rem', color: 'var(--foreground)', margin: 0, lineHeight: 1.5, opacity: 0.9 }}>
                 {t('learn.step2.tip')}
               </p>
             </div>
