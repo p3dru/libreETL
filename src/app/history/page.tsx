@@ -8,10 +8,12 @@ import { Database, Calendar, Table, Trash2, ArrowRight, Play, Layout, GitMerge, 
 import { exportToCsv } from '@/core/exporters/exportCsv';
 import { exportToXlsx } from '@/core/exporters/exportXlsx';
 import { customConfirm } from '@/core/ui/customDialogs';
+import { useI18n } from '@/core/i18n/I18nContext';
 
 export default function HistoryPage() {
   const [datasets, setDatasets] = useState<Dataset[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useI18n();
 
   const loadDatasets = async () => {
     try {
@@ -30,7 +32,7 @@ export default function HistoryPage() {
   }, []);
 
   const handleDelete = async (id: string) => {
-    const isConfirmed = await customConfirm('Are you sure you want to delete this dataset?', true);
+    const isConfirmed = await customConfirm(t('history.delete.confirm'), true);
     if (isConfirmed) {
       await db.datasets.delete(id);
       loadDatasets();
@@ -38,18 +40,18 @@ export default function HistoryPage() {
   };
 
   if (isLoading) {
-    return <div className="container" style={{ padding: '4rem 0', textAlign: 'center' }}>Loading...</div>;
+    return <div className="container" style={{ padding: '4rem 0', textAlign: 'center' }}>{t('history.loading')}</div>;
   }
 
   return (
     <div className="container" style={{ padding: '2rem 0' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div>
-          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>Your Datasets</h2>
-          <p style={{ color: '#94a3b8' }}>Resume your previous sessions securely stored in your browser.</p>
+          <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('history.title')}</h2>
+          <p style={{ color: '#94a3b8' }}>{t('history.subtitle')}</p>
         </div>
         <Link href="/upload" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          New Upload <ArrowRight size={18} />
+          {t('history.newUpload')} <ArrowRight size={18} />
         </Link>
       </div>
 
@@ -58,13 +60,13 @@ export default function HistoryPage() {
           <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'rgba(99, 102, 241, 0.1)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
             <Database size={32} />
           </div>
-          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>No datasets found</h3>
+          <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{t('history.empty.title')}</h3>
           <p style={{ color: '#94a3b8', marginBottom: '2rem', maxWidth: '400px', margin: '0 auto' }}>
-            You haven't uploaded any datasets yet. Upload a CSV or Excel file to get started.
+            {t('history.empty.desc')}
           </p>
           <div style={{ marginTop: '2rem' }}>
             <Link href="/upload" className="btn btn-primary">
-              Upload Dataset
+              {t('history.empty.cta')}
             </Link>
           </div>
         </div>
@@ -78,13 +80,13 @@ export default function HistoryPage() {
                   <Trash2 size={18} />
                 </button>
               </div>
-              
+
               <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', color: '#94a3b8', fontSize: '0.875rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                  <Table size={14} /> {dataset.rows.length} rows
+                  <Table size={14} /> {dataset.rows.length} {t('history.rows')}
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-                  <Layout size={14} /> {dataset.columns.length} cols
+                  <Layout size={14} /> {dataset.columns.length} {t('history.cols')}
                 </div>
                 {dataset.createdAt && (
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
@@ -92,32 +94,29 @@ export default function HistoryPage() {
                   </div>
                 )}
               </div>
-              
+
               <div style={{ marginTop: 'auto', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 <div style={{ display: 'flex', gap: '0.5rem', marginTop: 'auto', flexWrap: 'wrap' }}>
-                  <Link 
+                  <Link
                     href={`/analyzer?id=${dataset.id}`}
-                    className="btn btn-secondary" 
+                    className="btn btn-secondary"
                     style={{ flex: 1, textAlign: 'center', padding: '0.5rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem' }}
-                    title="Analyzer"
                   >
-                    <Layout size={14} /> Analyzer
+                    <Layout size={14} /> {t('history.btn.analyzer')}
                   </Link>
-                  <Link 
+                  <Link
                     href={`/pipeline?id=${dataset.id}`}
-                    className="btn btn-secondary" 
+                    className="btn btn-secondary"
                     style={{ flex: 1, textAlign: 'center', padding: '0.5rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem', color: '#8b5cf6', borderColor: 'rgba(139, 92, 246, 0.3)' }}
-                    title="Build Pipeline"
                   >
-                    <Play size={14} /> Pipeline
+                    <Play size={14} /> {t('history.btn.pipeline')}
                   </Link>
-                  <Link 
+                  <Link
                     href={`/merge?leftId=${dataset.id}`}
-                    className="btn btn-primary" 
+                    className="btn btn-primary"
                     style={{ flex: 1, textAlign: 'center', padding: '0.5rem', fontSize: '0.8rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.25rem' }}
-                    title="Merge Dataset"
                   >
-                    <GitMerge size={14} /> Merge
+                    <GitMerge size={14} /> {t('history.btn.merge')}
                   </Link>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>

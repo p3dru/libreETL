@@ -3,12 +3,16 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { ShieldAlert } from 'lucide-react';
+import { ShieldAlert, Moon, Sun, Globe } from 'lucide-react';
 import { db } from '@/core/db';
 import { customConfirm, customAlert } from '@/core/ui/customDialogs';
+import { useTheme } from '@/core/theme/ThemeContext';
+import { useI18n } from '@/core/i18n/I18nContext';
 
 export default function Header() {
   const pathname = usePathname();
+  const { theme, toggleTheme } = useTheme();
+  const { language, setLanguage, t } = useI18n();
   
   const navStyle = (path: string) => ({
     color: pathname === path ? 'var(--foreground)' : '#94a3b8',
@@ -37,11 +41,11 @@ export default function Header() {
           </div>
           <h1 style={{ fontSize: '1.25rem', margin: 0 }}>DataQ</h1>
         </Link>
-        <nav style={{ display: 'flex', gap: '1.5rem' }}>
-          <Link href="/" style={navStyle('/')}>Dashboard</Link>
-          <Link href="/learn" style={navStyle('/learn')}>Learn</Link>
-          <Link href="/upload" style={navStyle('/upload')}>Upload</Link>
-          <Link href="/history" style={navStyle('/history')}>History</Link>
+        <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <Link href="/" style={navStyle('/')}>{t('nav.dashboard')}</Link>
+          <Link href="/learn" style={navStyle('/learn')}>{t('nav.learn')}</Link>
+          <Link href="/upload" style={navStyle('/upload')}>{t('nav.upload')}</Link>
+          <Link href="/history" style={navStyle('/history')}>{t('nav.history')}</Link>
           <Link
             href="/merge"
             style={{
@@ -57,9 +61,28 @@ export default function Header() {
               borderBottom: 'none',
             }}
           >
-            ⋈ Merge
+            {t('nav.merge')}
           </Link>
-          <button 
+          
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid var(--surface-border)', paddingLeft: '1.5rem', marginLeft: '0.5rem' }}>
+            {/* Theme Toggle */}
+            <button onClick={toggleTheme} suppressHydrationWarning style={{ color: '#94a3b8', display: 'flex', alignItems: 'center' }} title="Toggle Theme">
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            
+            {/* Language Toggle */}
+            <select 
+              value={language}
+              suppressHydrationWarning
+              onChange={(e) => setLanguage(e.target.value as any)}
+              style={{ background: 'transparent', color: '#94a3b8', border: 'none', outline: 'none', cursor: 'pointer', fontSize: '0.875rem' }}
+            >
+              <option value="en">EN</option>
+              <option value="pt">PT</option>
+              <option value="es">ES</option>
+            </select>
+            
+            <button  
             onClick={handleSecureWipe}
             style={{
               background: 'transparent',
@@ -77,6 +100,7 @@ export default function Header() {
           >
             <ShieldAlert size={14} /> Wipe Cache
           </button>
+          </div>
         </nav>
       </div>
     </header>
