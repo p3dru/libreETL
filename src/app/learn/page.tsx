@@ -1,18 +1,8 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, UploadCloud, Activity, Layout, GitMerge, Download, ShieldAlert, Zap, Database, Save, ChevronRight } from 'lucide-react';
-
-const sections = [
-  { id: 'intro', label: 'O que é o DataQ?' },
-  { id: 'upload', label: 'Upload & Armazenamento' },
-  { id: 'diagnostics', label: 'Motor de Diagnóstico' },
-  { id: 'pipeline', label: 'Pipeline Visual (ETL)' },
-  { id: 'transforms', label: 'Transformações Disponíveis' },
-  { id: 'merge', label: 'Mesclagem de Datasets' },
-  { id: 'history', label: 'Histórico & Receitas' },
-  { id: 'export', label: 'Exportação' },
-];
+import { BookOpen, UploadCloud, Activity, Layout, GitMerge, Download, ShieldAlert, Zap, Save, ChevronRight } from 'lucide-react';
+import { useI18n } from '@/core/i18n/I18nContext';
 
 const Code = ({ children }: { children: React.ReactNode }) => (
   <code style={{
@@ -63,7 +53,19 @@ const ParamRow = ({ name, type, desc }: { name: string, type: string, desc: stri
 );
 
 export default function LearnWikiPage() {
+  const { t } = useI18n();
   const [activeSection, setActiveSection] = useState('intro');
+
+  const sections = [
+    { id: 'intro', label: t('learn.nav.intro') },
+    { id: 'upload', label: t('learn.nav.upload') },
+    { id: 'diagnostics', label: t('learn.nav.diagnostics') },
+    { id: 'pipeline', label: t('learn.nav.pipeline') },
+    { id: 'transforms', label: t('learn.nav.transforms') },
+    { id: 'merge', label: t('learn.nav.merge') },
+    { id: 'history', label: t('learn.nav.history') },
+    { id: 'export', label: t('learn.nav.export') },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,12 +79,17 @@ export default function LearnWikiPage() {
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [sections]);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) window.scrollTo({ top: el.offsetTop - 110, behavior: 'smooth' });
   };
+
+  const transforms = [
+    { key: 'dropnulls' }, { key: 'fillnulls' }, { key: 'dropdupes' },
+    { key: 'case' }, { key: 'trim' }, { key: 'rename' }, { key: 'filter' },
+  ];
 
   return (
     <div className="container" style={{ display: 'flex', gap: '3rem', padding: '2.5rem 0 10rem', maxWidth: '1200px', alignItems: 'flex-start' }}>
@@ -112,178 +119,83 @@ export default function LearnWikiPage() {
         {/* INTRO */}
         <section id="intro" style={{ marginBottom: '5rem' }}>
           <div style={{ marginBottom: '2rem' }}>
-            <Tag>Visão Geral</Tag>
-            <h1 className="font-serif" style={{ fontSize: '2.8rem', fontWeight: 800, margin: '0.75rem 0 1rem', lineHeight: 1.2 }}>O que é o DataQ?</h1>
-            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75 }}>
-              DataQ é uma ferramenta de diagnóstico e limpeza de dados que roda direto no navegador — sem backend, sem servidor, sem instalação. 
-              Você carrega um CSV, o sistema analisa, você corrige o que precisar e exporta o arquivo limpo. Ponto.
-            </p>
-            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75, marginTop: '0.75rem' }}>
-              A ideia veio de uma dor real: você recebe uma planilha, ela está cheia de nulos, texto onde deveria ter número, duplicatas. 
-              Antes de conseguir usar esses dados em qualquer análise, passa horas ajustando manualmente. O DataQ automatiza boa parte desse processo sem exigir que você saiba programar.
-            </p>
+            <Tag>{t('learn.nav.intro')}</Tag>
+            <h1 className="font-serif" style={{ fontSize: '2.8rem', fontWeight: 800, margin: '0.75rem 0 1rem', lineHeight: 1.2 }}>{t('learn.page.title')}</h1>
+            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75 }}>{t('learn.page.subtitle')}</p>
+            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75, marginTop: '0.75rem' }}>{t('learn.page.subtitle2')}</p>
           </div>
-
           <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)', borderLeft: '4px solid var(--success)', marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
               <ShieldAlert size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
               <div>
-                <h4 style={{ fontWeight: 700, margin: '0 0 0.4rem', color: 'var(--success)' }}>Seus dados não saem do computador</h4>
-                <p style={{ fontSize: '0.92rem', color: '#94a3b8', margin: 0, lineHeight: 1.65 }}>
-                  Tudo é processado localmente via IndexedDB e APIs nativas do browser. O DataQ não tem servidor. Não há nenhum endereço para onde seus dados sejam enviados — nem mesmo para telemetria.
-                </p>
+                <h4 style={{ fontWeight: 700, margin: '0 0 0.4rem', color: 'var(--success)' }}>{t('learn.privacy.title')}</h4>
+                <p style={{ fontSize: '0.92rem', color: '#94a3b8', margin: 0, lineHeight: 1.65 }}>{t('learn.privacy.desc')}</p>
               </div>
             </div>
           </div>
-
-          <InfoBox title="Quando usar o DataQ?">
-            Quando você tem arquivos CSV ou Excel com problemas conhecidos (nulos, duplicatas, formatação inconsistente) e quer resolver isso antes de importar em outra ferramenta, banco de dados ou análise. Não é um substituto para Python/R em pipelines complexos de produção, mas serve muito bem para limpezas rápidas e recorrentes.
-          </InfoBox>
+          <InfoBox title={t('learn.when.title')}>{t('learn.when.desc')}</InfoBox>
         </section>
 
         {/* UPLOAD */}
         <section id="upload" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
-          <Heading2 icon={<UploadCloud size={22} />}>Upload & Armazenamento</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            O primeiro passo é sempre trazer seu arquivo para dentro do sistema. A tela de Upload aceita dois formatos e tem uma barra de progresso que mostra em tempo real o parsing do arquivo.
-          </p>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>Formatos suportados</h3>
-          <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' as const }}>
-            <InfoBox title=".csv — Comma-Separated Values">
-              O padrão mais comum. O parser detecta automaticamente o delimitador (vírgula, ponto e vírgula, tab). 
-              Arquivos gerados por bancos de dados, ERPs e ferramentas de BI geralmente estão nesse formato.
-            </InfoBox>
-            <InfoBox title=".xlsx / .xls — Excel">
-              Lê a primeira aba (sheet) do arquivo. Células mescladas são achatadas. Formatações visuais (cores, bordas) são ignoradas — só o conteúdo importa.
-            </InfoBox>
+          <Heading2 icon={<UploadCloud size={22} />}>{t('learn.upload.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.upload.intro')}</p>
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.upload.formats.title')}</h3>
+          <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem', marginBottom: '2rem' }}>
+            <InfoBox title={t('learn.upload.csv.title')}>{t('learn.upload.csv.desc')}</InfoBox>
+            <InfoBox title={t('learn.upload.xlsx.title')}>{t('learn.upload.xlsx.desc')}</InfoBox>
           </div>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>O que acontece depois do upload?</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>
-            O arquivo é convertido para JSON e salvo no IndexedDB do seu navegador com um ID único (UUID). A partir daí ele aparece na sua lista de datasets em "Seus Datasets" e você pode abrir, analisar ou transformar quando quiser — mesmo sem reenviar o arquivo.
-          </p>
-
-          <InfoBox title="Boas práticas ao enviar" color="var(--warning)">
-            Dê um nome descritivo ao arquivo antes de enviar. Depois que está no sistema, o nome é o único identificador visual. 
-            <strong> Evite espaços e caracteres especiais</strong> no nome do arquivo (ex: prefira <Code>vendas_2024.csv</Code> ao invés de <Code>Vendas (2024) final FINAL.csv</Code>).
-          </InfoBox>
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.upload.after.title')}</h3>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.upload.after.desc')}</p>
+          <InfoBox title={t('learn.upload.tip.title')} color="var(--warning)">{t('learn.upload.tip.desc')}</InfoBox>
         </section>
 
         {/* DIAGNOSTICS */}
         <section id="diagnostics" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
-          <Heading2 icon={<Activity size={22} />} color="var(--success)">Motor de Diagnóstico</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            Quando você abre um dataset, o DataQ roda um scan automático em todas as colunas. O resultado aparece na tela do Analisador com um painel lateral de métricas e um score geral de 0 a 100.
-          </p>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>Score de Qualidade</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>
-            O score é um número único que resume a saúde do dataset. Ele começa em 100 e perde pontos baseado em três fatores:
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem', marginBottom: '2rem' }}>
-            <ParamRow name="Nulos" type="penalidade alta" desc="Células vazias numa coluna que deveria ter dados. Uma coluna com 40% de nulos indica problema sério na fonte dos dados ou na exportação." />
-            <ParamRow name="Duplicatas" type="penalidade média" desc="Linhas idênticas em todo o dataset. Geralmente causa dupla contagem em análises." />
-            <ParamRow name="Tipagem Mista" type="penalidade variável" desc="Colunas que misturam texto e número (ex: '42', 'N/A', '37.5'). Inviabiliza qualquer cálculo matemático direto." />
+          <Heading2 icon={<Activity size={22} />} color="var(--success)">{t('learn.diag.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.diag.intro')}</p>
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--foreground)' }}>{t('learn.diag.score.title')}</h3>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.diag.score.desc')}</p>
+          <div style={{ display: 'flex', flexDirection: 'column' as const, marginBottom: '2rem' }}>
+            <ParamRow name={t('learn.param.nulls')} type={t('learn.param.penalty.high')} desc={t('learn.diag.nulls')} />
+            <ParamRow name={t('learn.param.dupes')} type={t('learn.param.penalty.med')} desc={t('learn.diag.dupes')} />
+            <ParamRow name={t('learn.param.mixed')} type={t('learn.param.penalty.var')} desc={t('learn.diag.mixed')} />
           </div>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>Estatísticas por coluna</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>
-            Para cada coluna, o sistema calcula métricas diferentes dependendo do tipo:
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column' as const }}>
-            <ParamRow name="Colunas numéricas" type="number" desc="Mínimo, máximo, média (mean) e desvio padrão. O desvio padrão alto indica outliers ou grande variação nos dados." />
-            <ParamRow name="Colunas de texto" type="string" desc="Cardinalidade (quantos valores únicos existem) e moda (valor mais frequente). Cardinalidade 1 significa que todos os valores são iguais — provavelmente a coluna é constante." />
-            <ParamRow name="% de nulos" type="all" desc="Percentual de células vazias na coluna. Aparece em vermelho quando passa de 10%." />
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.diag.stats.title')}</h3>
+          <div style={{ display: 'flex', flexDirection: 'column' as const, marginBottom: '2rem' }}>
+            <ParamRow name={t('learn.param.numeric')} type="number" desc={t('learn.diag.numeric')} />
+            <ParamRow name={t('learn.param.text')} type="string" desc={t('learn.diag.text')} />
+            <ParamRow name={t('learn.param.nullpct')} type="all" desc={t('learn.diag.nullpct')} />
           </div>
-
-          <InfoBox title="O botão 'Corrigir no Pipeline'" color="var(--warning)">
+          <InfoBox title={t('learn.diag.fixbtn.title')} color="var(--warning)">
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '0.5rem' }}>
               <Zap size={14} style={{ color: 'var(--warning)', flexShrink: 0 }} />
-              <strong>Botões verdes na tela de análise</strong>
             </div>
-            Quando o diagnóstico detecta um problema em uma coluna específica, ele oferece um botão verde "Corrigir no Pipeline". 
-            Clicar nele cria automaticamente o bloco de transformação adequado no Pipeline — você não precisa configurar nada manualmente.
+            {t('learn.diag.fixbtn.desc')}
           </InfoBox>
         </section>
 
         {/* PIPELINE */}
         <section id="pipeline" style={{ marginBottom: '3rem', scrollMarginTop: '110px' }}>
-          <Heading2 icon={<Layout size={22} />} color="#8b5cf6">Pipeline Visual (ETL)</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            O Pipeline é onde as transformações acontecem de fato. Funciona como uma lista ordenada de passos — cada passo modifica o dataset e passa o resultado para o próximo. 
-            Você pode reordenar os blocos arrastando, deletar, ou adicionar novos a qualquer momento.
-          </p>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '2rem' }}>
-            A execução é não-destrutiva: o arquivo original salvo no IndexedDB nunca é alterado. 
-            O Pipeline gera uma cópia transformada apenas quando você clica em "Executar" ou exportar.
-          </p>
-
-          <InfoBox title="Como o Pipeline funciona por dentro" color="#8b5cf6">
-            Cada bloco de transformação recebe o array de linhas do passo anterior, aplica a operação configurada e retorna um novo array. 
-            O custo de performance é O(n) por bloco — para arquivos abaixo de 100k linhas, a execução é instantânea na maioria dos navegadores modernos.
-          </InfoBox>
+          <Heading2 icon={<Layout size={22} />} color="#8b5cf6">{t('learn.pipeline.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.pipeline.intro')}</p>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '2rem' }}>{t('learn.pipeline.nondestructive')}</p>
+          <InfoBox title={t('learn.pipeline.internals.title')} color="#8b5cf6">{t('learn.pipeline.internals.desc')}</InfoBox>
         </section>
 
         {/* TRANSFORMS */}
         <section id="transforms" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
-          <h3 className="font-serif" style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1.5rem' }}>Transformações disponíveis</h3>
+          <h3 className="font-serif" style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '1.5rem' }}>{t('learn.transforms.title')}</h3>
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '1.25rem' }}>
-            {[
-              {
-                name: 'Drop Nulls',
-                param: 'coluna: string',
-                desc: 'Remove todas as linhas onde a coluna especificada está vazia, null ou undefined. Use quando o dado nulo não tem como ser imputado e a linha sem ele é inútil.',
-                use: 'Eliminar registros sem ID, sem data ou sem valor de medição.',
-              },
-              {
-                name: 'Fill Nulls',
-                param: 'coluna: string, valor: any',
-                desc: 'Preenche os espaços vazios de uma coluna com um valor fixo. Não remove linhas — só preenche o campo vazio.',
-                use: 'Preencher "Desconhecido" em colunas de categoria, ou "0" em colunas numéricas onde nulo significa ausência de ocorrência.',
-              },
-              {
-                name: 'Drop Duplicates',
-                param: 'colunas?: string[]',
-                desc: 'Mantém só a primeira ocorrência de linhas repetidas. Se você não especificar colunas, compara a linha inteira. Se especificar, a duplicata é detectada apenas naquelas colunas.',
-                use: 'Remover registros gerados duas vezes por falha no sistema de origem.',
-              },
-              {
-                name: 'Uppercase / Lowercase',
-                param: 'coluna: string, modo: "upper" | "lower"',
-                desc: 'Padroniza o case de texto em uma coluna. Indispensável antes de qualquer Join ou agrupamento — "São Paulo", "SÃO PAULO" e "são paulo" são strings diferentes para o computador.',
-                use: 'Padronizar nomes de cidades, estados, categorias ou qualquer campo que venha de entrada manual.',
-              },
-              {
-                name: 'Trim',
-                param: 'coluna: string',
-                desc: 'Remove espaços em branco no começo e no fim de cada valor da coluna. Não altera o conteúdo do meio da string.',
-                use: 'Corrigir copiar-e-colar descuidado ou exportações de sistemas legados que preenchem campos com espaços.',
-              },
-              {
-                name: 'Rename Column',
-                param: 'coluna: string, novo_nome: string',
-                desc: 'Renomeia uma coluna sem alterar seus valores. Útil quando o header original vem com nome técnico ou em outro idioma.',
-                use: 'Padronizar nomes antes de um Merge com outro dataset.',
-              },
-              {
-                name: 'Filter Rows',
-                param: 'coluna: string, operador: string, valor: any',
-                desc: 'Filtra linhas com base em uma condição. Operadores disponíveis: igual, diferente, maior que, menor que, contém (para texto).',
-                use: 'Manter só registros de um período específico, de uma categoria, ou excluir outliers extremos.',
-              },
-            ].map(t => (
-              <div key={t.name} className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', borderLeft: '3px solid #8b5cf6' }}>
+            {transforms.map(tr => (
+              <div key={tr.key} className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-md)', borderLeft: '3px solid #8b5cf6' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' as const }}>
-                  <h4 style={{ fontWeight: 700, margin: 0, fontSize: '1rem' }}>{t.name}</h4>
-                  <Code>{t.param}</Code>
+                  <h4 style={{ fontWeight: 700, margin: 0, fontSize: '1rem' }}>{t(`learn.transform.${tr.key}.name`)}</h4>
+                  <Code>{t(`learn.transform.${tr.key}.param`)}</Code>
                 </div>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: '0 0 0.6rem', lineHeight: 1.6 }}>{t.desc}</p>
+                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: '0 0 0.6rem', lineHeight: 1.6 }}>{t(`learn.transform.${tr.key}.desc`)}</p>
                 <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0 }}>
-                  <strong style={{ color: '#94a3b8' }}>Quando usar:</strong> {t.use}
+                  <strong style={{ color: '#94a3b8' }}>{t('learn.when')}:</strong> {t(`learn.transform.${tr.key}.use`)}
                 </p>
               </div>
             ))}
@@ -292,67 +204,39 @@ export default function LearnWikiPage() {
 
         {/* MERGE */}
         <section id="merge" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
-          <Heading2 icon={<GitMerge size={22} />} color="#ec4899">Mesclagem de Datasets</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            A tela de Merge combina dois datasets usando uma coluna em comum — o equivalente a um JOIN do SQL. 
-            É útil quando suas informações estão divididas em arquivos separados e precisam ser consolidadas.
-          </p>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>Configuração</h3>
+          <Heading2 icon={<GitMerge size={22} />} color="#ec4899">{t('learn.merge.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.merge.intro')}</p>
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.merge.config.title')}</h3>
           <div style={{ display: 'flex', flexDirection: 'column' as const }}>
-            <ParamRow name="Dataset Principal" type="obrigatório" desc="O dataset 'base' da operação. As linhas deste dataset definem o que aparece no resultado." />
-            <ParamRow name="Dataset Secundário" type="obrigatório" desc="O dataset de onde vêm as colunas extras. Pode ter mais linhas que o principal — as que não encontrarem par são descartadas (no Inner Join) ou ficam nulas (no Left Join)." />
-            <ParamRow name="Chave de Merge (Merge Key)" type="string" desc="O nome da coluna que deve existir nos dois datasets com valores correspondentes. Ex: 'cpf', 'id_produto', 'codigo_municipio'. Os valores precisam ser idênticos (case-sensitive)." />
-            <ParamRow name="Tipo de Join" type='"left" | "inner"' desc="Left Join: preserva todas as linhas do dataset principal, mesmo que não haja correspondência. Inner Join: mantém somente as linhas que têm correspondência nos dois lados." />
+            <ParamRow name={t('learn.param.primary')} type={t('learn.param.required')} desc={t('learn.merge.primary')} />
+            <ParamRow name={t('learn.param.secondary')} type={t('learn.param.required')} desc={t('learn.merge.secondary')} />
+            <ParamRow name={t('learn.param.key')} type="string" desc={t('learn.merge.key')} />
+            <ParamRow name={t('learn.param.jointype')} type='"left" | "inner"' desc={t('learn.merge.type')} />
           </div>
-
-          <InfoBox title="Prepare as colunas antes de mesclar" color="#ec4899">
-            Se a chave de merge for texto, certifique-se de que os dois datasets usam o mesmo formato. 
-            Um dataset com <Code>SP</Code> e outro com <Code>São Paulo</Code> não vão casar. Use o Pipeline com Uppercase e Trim em ambos antes de mesclar.
-          </InfoBox>
+          <InfoBox title={t('learn.merge.tip.title')} color="#ec4899">{t('learn.merge.tip.desc')}</InfoBox>
         </section>
 
         {/* HISTORY */}
         <section id="history" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
-          <Heading2 icon={<Save size={22} />} color="var(--warning)">Histórico & Receitas</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            Todo dataset que você sobe fica salvo no Histórico. Você pode abrir qualquer um a qualquer momento sem precisar reenviar o arquivo — desde que não tenha limpado o cache do navegador.
-          </p>
-
-          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>Receitas (Recipes)</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.25rem' }}>
-            Uma Receita é um Pipeline salvo desvinculado de um dataset específico. Quando você exporta uma receita e depois aplica ela num novo arquivo, 
-            todos os passos de transformação rodam automaticamente — sem você precisar reconfigurar bloco por bloco.
-          </p>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            O caso de uso principal é o processamento recorrente: você recebe a planilha de vendas toda semana no mesmo formato. 
-            Cria a receita uma vez, salva, e nas semanas seguintes aplica em segundos.
-          </p>
-
-          <InfoBox title="Receitas são arquivos JSON" color="var(--warning)">
-            Internamente, uma Receita é um array JSON descrevendo cada bloco de transformação na ordem correta. 
-            Você pode abri-la em qualquer editor de texto para conferir ou editar manualmente se precisar de algo que a UI ainda não oferece.
-          </InfoBox>
+          <Heading2 icon={<Save size={22} />} color="var(--warning)">{t('learn.history.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.intro')}</p>
+          <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.history.recipes.title')}</h3>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.25rem' }}>{t('learn.history.recipes.desc')}</p>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.recipes.use')}</p>
+          <InfoBox title={t('learn.history.recipes.json.title')} color="var(--warning)">{t('learn.history.recipes.json.desc')}</InfoBox>
         </section>
 
         {/* EXPORT */}
         <section id="export" style={{ scrollMarginTop: '110px' }}>
-          <Heading2 icon={<Download size={22} />}>Exportação</Heading2>
-
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>
-            Depois de limpar e transformar o dataset no Pipeline, você pode exportar o resultado. O download é gerado localmente — o navegador monta o arquivo na memória e dispara o download diretamente para a sua pasta de Downloads.
-          </p>
-
+          <Heading2 icon={<Download size={22} />}>{t('learn.export.title')}</Heading2>
+          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.export.intro')}</p>
           <div style={{ display: 'flex', flexDirection: 'column' as const }}>
-            <ParamRow name="CSV (UTF-8)" type="padrão" desc="Exporta com vírgula como delimitador e BOM UTF-8 no início, garantindo que caracteres especiais (ç, ã, é) apareçam corretamente ao abrir no Excel." />
-            <ParamRow name="XLSX" type="disponível" desc="Exporta uma planilha Excel formatada, com a primeira linha contendo os headers em negrito." />
+            <ParamRow name={t('learn.param.csv')} type={t('learn.param.default')} desc={t('learn.export.csv')} />
+            <ParamRow name={t('learn.param.xlsx')} type={t('learn.param.available')} desc={t('learn.export.xlsx')} />
           </div>
-
           <div style={{ marginTop: '3rem', textAlign: 'center' as const }}>
             <a href="/upload" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2.5rem', fontSize: '1rem', borderRadius: 'var(--radius-full)' }}>
-              Começar agora <ChevronRight size={18} />
+              {t('learn.cta')} <ChevronRight size={18} />
             </a>
           </div>
         </section>
