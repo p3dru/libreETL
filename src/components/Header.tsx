@@ -63,6 +63,26 @@ export default function Header() {
           </Link>
           
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', borderLeft: '1px solid var(--surface-border)', paddingLeft: '1.5rem', marginLeft: '0.5rem' }}>
+            {/* Wipe Cache */}
+            <button  
+              onClick={handleSecureWipe}
+              style={{
+                background: 'transparent',
+                border: '1px solid rgba(239, 68, 68, 0.3)',
+                color: 'var(--error)',
+                padding: '0.25rem 0.75rem',
+                borderRadius: 'var(--radius-md)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                cursor: 'pointer',
+                fontWeight: 600,
+                fontSize: '0.875rem'
+              }}
+            >
+              <ShieldAlert size={14} /> {t('nav.wipeCache')}
+            </button>
+
             {/* Theme Toggle */}
             <button onClick={toggleTheme} suppressHydrationWarning style={{ color: '#94a3b8', display: 'flex', alignItems: 'center' }} title="Toggle Theme">
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
@@ -79,25 +99,6 @@ export default function Header() {
               <option value="pt">PT</option>
               <option value="es">ES</option>
             </select>
-            
-            <button  
-            onClick={handleSecureWipe}
-            style={{
-              background: 'transparent',
-              border: '1px solid rgba(239, 68, 68, 0.3)',
-              color: 'var(--error)',
-              padding: '0.25rem 0.75rem',
-              borderRadius: 'var(--radius-md)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.35rem',
-              cursor: 'pointer',
-              fontWeight: 600,
-              fontSize: '0.875rem'
-            }}
-          >
-            <ShieldAlert size={14} /> {t('nav.wipeCache')}
-          </button>
           </div>
         </nav>
       </div>

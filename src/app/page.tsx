@@ -27,9 +27,14 @@ export default function Home() {
         <p style={{ fontSize: '1.25rem', color: '#94a3b8', marginBottom: '3rem' }}>
           {t('home.hero.subtitle')}
         </p>
-        <Link href="/upload" className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
-          {t('home.hero.cta')} <ArrowRight size={20} />
-        </Link>
+        <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <Link href="/upload" className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
+            {t('home.hero.cta')} <ArrowRight size={20} />
+          </Link>
+          <Link href="/learn" className="btn btn-secondary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
+            {t('nav.learn')}
+          </Link>
+        </div>
       </div>
 
       {recentDatasets.length > 0 && (

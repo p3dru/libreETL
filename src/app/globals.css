@@ -217,6 +217,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 10;
 }
 
+.light-theme .data-table th {
+  color: #475569;
+}
+
 .data-table td {
   padding: 0.75rem 1rem;
   white-space: nowrap;
@@ -230,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Zebra striping for better readability */
 .data-table tbody tr:nth-child(odd) td {
-  background-color: rgba(128, 128, 128, 0.03);
+  background-color: var(--surface-hover);
 }
 
 .data-table tbody tr:nth-child(even) td {
@@ -238,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .data-table tr:hover td {
-  background-color: var(--surface-hover) !important;
+  background-color: rgba(99, 102, 241, 0.1) !important;
 }
 
 /* Animations */
