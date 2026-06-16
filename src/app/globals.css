@@ -97,7 +97,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url('/bg-nodes.png');
+  background-image: url('/bg-nodes-light.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -106,14 +106,12 @@ body {
   /* Mask out the center to only show on the edges */
   mask-image: linear-gradient(to right, black 0%, transparent 20%, transparent 80%, black 100%);
   -webkit-mask-image: linear-gradient(to right, black 0%, transparent 20%, transparent 80%, black 100%);
-  opacity: 0.4; /* Increased visibility for light theme */
-  mix-blend-mode: multiply;
+  opacity: 0.6; /* Light theme visibility */
 }
 
 .dark-theme .home-parallax-bg {
-  opacity: 0.05; /* Adjusted dark theme opacity */
-  filter: invert(1) hue-rotate(180deg);
-  mix-blend-mode: screen;
+  background-image: url('/bg-nodes-dark.png');
+  opacity: 0.4; /* Dark theme visibility */
 }
 
 a {
