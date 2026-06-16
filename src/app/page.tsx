@@ -6,6 +6,7 @@ import { ArrowRight, Database, ShieldCheck, Zap, Play, Layout, Table } from 'luc
 import { db } from '@/core/db';
 import { Dataset } from '@/types/dataset';
 import { useI18n } from '@/core/i18n/I18nContext';
+import Roadmap from '@/components/Roadmap';
 
 export default function Home() {
   const [recentDatasets, setRecentDatasets] = useState<Dataset[]>([]);
@@ -31,11 +32,10 @@ export default function Home() {
           <Link href="/upload" className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
             {t('home.hero.cta')} <ArrowRight size={20} />
           </Link>
-          <Link href="/learn" className="btn btn-secondary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
-            {t('nav.learn')}
-          </Link>
         </div>
       </div>
+      
+      <Roadmap />
 
       {recentDatasets.length > 0 && (
         <div style={{ marginTop: '2rem', textAlign: 'left', marginBottom: '4rem' }}>

@@ -39,13 +39,13 @@
 }
 
 .light-theme {
-  --background: #ffffff;
+  --background: #faf8f2;
   --foreground: #09090b;
   
   --primary: #4f46e5;
   --primary-hover: #4338ca;
-  --secondary: #f4f4f5;
-  --secondary-hover: #e4e4e7;
+  --secondary: #f3f0e8;
+  --secondary-hover: #e8e4db;
   
   --surface: rgba(255, 255, 255, 0.7);
   --surface-border: rgba(0, 0, 0, 0.08);
