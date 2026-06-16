@@ -87,6 +87,28 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+/* Subtle parallax data nodes texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/bg-nodes.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.12; /* Subtle opacity for light theme */
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark-theme body::before {
+  opacity: 0.03; /* Even more subtle for dark theme */
+  filter: invert(1) hue-rotate(180deg);
 }
 
 a {
