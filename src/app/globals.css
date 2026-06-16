@@ -106,12 +106,14 @@ body {
   /* Mask out the center to only show on the edges */
   mask-image: linear-gradient(to right, black 0%, transparent 20%, transparent 80%, black 100%);
   -webkit-mask-image: linear-gradient(to right, black 0%, transparent 20%, transparent 80%, black 100%);
-  opacity: 0.1; /* Light theme subtle */
+  opacity: 0.4; /* Increased visibility for light theme */
+  mix-blend-mode: multiply;
 }
 
 .dark-theme .home-parallax-bg {
-  opacity: 0.03; /* Dark theme subtle */
+  opacity: 0.05; /* Adjusted dark theme opacity */
   filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: screen;
 }
 
 a {
