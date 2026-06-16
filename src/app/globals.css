@@ -90,9 +90,8 @@ body {
   position: relative;
 }
 
-/* Subtle parallax data nodes texture */
-body::before {
-  content: '';
+/* Home Page Parallax Effect */
+.home-parallax-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -101,13 +100,17 @@ body::before {
   background-image: url('/bg-nodes.png');
   background-size: cover;
   background-position: center;
-  opacity: 0.12; /* Subtle opacity for light theme */
+  background-attachment: fixed;
   pointer-events: none;
   z-index: -1;
+  /* Mask out the center to only show on the edges */
+  mask-image: radial-gradient(ellipse at center, transparent 35%, black 90%);
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 35%, black 90%);
+  opacity: 0.05; /* Light theme subtle */
 }
 
-.dark-theme body::before {
-  opacity: 0.03; /* Even more subtle for dark theme */
+.dark-theme .home-parallax-bg {
+  opacity: 0.03; /* Dark theme subtle */
   filter: invert(1) hue-rotate(180deg);
 }
 
