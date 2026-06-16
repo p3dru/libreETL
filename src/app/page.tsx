@@ -1,66 +1,86 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { ArrowRight, Database, ShieldCheck, Zap, Play, Layout, Table } from 'lucide-react';
+import { db } from '@/core/db';
+import { Dataset } from '@/types/dataset';
 
 export default function Home() {
+  const [recentDatasets, setRecentDatasets] = useState<Dataset[]>([]);
+
+  useEffect(() => {
+    db.datasets.toArray().then(data => {
+      data.sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0));
+      setRecentDatasets(data.slice(0, 3));
+    }).catch(console.error);
+  }, []);
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="container">
+      <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', padding: '4rem 0' }}>
+        <h1 style={{ fontSize: '3.5rem', lineHeight: 1.2, marginBottom: '1.5rem', background: 'linear-gradient(to right, #ffffff, #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          Intelligent Dataset Diagnosis & ETL
+        </h1>
+        <p style={{ fontSize: '1.25rem', color: '#94a3b8', marginBottom: '3rem' }}>
+          Upload your CSV or Excel files, instantly evaluate data quality, and apply visual transformations without writing a single line of code.
+        </p>
+        <Link href="/upload" className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
+          Get Started <ArrowRight size={20} />
+        </Link>
+      </div>
+
+      {recentDatasets.length > 0 && (
+        <div style={{ marginTop: '2rem', textAlign: 'left', marginBottom: '4rem' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+            <h2 style={{ fontSize: '1.5rem' }}>Continue your session</h2>
+            <Link href="/history" style={{ color: 'var(--primary)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              View all <ArrowRight size={16} />
+            </Link>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+            {recentDatasets.map(dataset => (
+              <div key={dataset.id} className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)' }}>
+                <h3 style={{ fontSize: '1.125rem', fontWeight: 600, wordBreak: 'break-all', marginBottom: '0.5rem' }}>{dataset.name}</h3>
+                <div style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}><Table size={14} /> {dataset.rows.length} rows</span>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <Link href={`/analyzer?id=${dataset.id}`} className="btn btn-secondary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.25rem', fontSize: '0.875rem', padding: '0.5rem' }}>
+                    <Play size={14} /> Analyze
+                  </Link>
+                  <Link href={`/pipeline?id=${dataset.id}`} className="btn btn-primary" style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '0.25rem', fontSize: '0.875rem', padding: '0.5rem' }}>
+                    <Layout size={14} /> Pipeline
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      )}
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', marginTop: '4rem' }}>
+        <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
+          <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-full)', background: 'rgba(99, 102, 241, 0.1)', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <Database size={24} />
+          </div>
+          <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Universal Upload</h3>
+          <p style={{ color: '#94a3b8' }}>Supports local parsing for CSV and XLSX files, ensuring your data never leaves your browser until you choose to export.</p>
         </div>
-      </main>
+        <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
+          <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-full)', background: 'rgba(16, 185, 129, 0.1)', color: 'var(--success)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <ShieldCheck size={24} />
+          </div>
+          <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Quality Scoring</h3>
+          <p style={{ color: '#94a3b8' }}>Get an instant health score from 0-100 based on missing values, duplicates, outliers, and type inconsistencies.</p>
+        </div>
+        <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)' }}>
+          <div style={{ width: '48px', height: '48px', borderRadius: 'var(--radius-full)', background: 'rgba(245, 158, 11, 0.1)', color: 'var(--warning)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <Zap size={24} />
+          </div>
+          <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>Visual Pipeline</h3>
+          <p style={{ color: '#94a3b8' }}>Build data transformation pipelines visually. Cleanse, transform, and normalize data in real-time before exporting.</p>
+        </div>
+      </div>
     </div>
   );
 }

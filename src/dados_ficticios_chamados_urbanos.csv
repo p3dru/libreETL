@@ -1,0 +1,121 @@
+﻿id_chamado,data_abertura,data_fechamento,categoria,bairro,descricao,status,prioridade,origem,responsavel,custo_estimado,tempo_resposta_horas,latitude,longitude,avaliacao_cidadao,reincidente,observacao
+1,2026-01-29 00:47:00,2026-01-31 16:47:00,Coleta de Lixo,Dirceu,Solicitação referente a coleta de lixo registrada pelo cidadão.,Resolvido,,App,Mariana Costa,6281.09,8.8,-5.163743,,4,None,Priorizar por proximidade de escola
+2,2026-04-19 10:17:00,,Ruído Urbano,Renascença,Solicitação referente a ruído urbano registrada pelo cidadão.,Em análise,,,Equipe Norte,940.61,33.3,-5.160875,-42.798927,2,None,Morador não atendeu contato
+3,2026-01-18 01:42:00,,Iluminação Pública,Mocambinho,Solicitação referente a iluminação pública registrada pelo cidadão.,Em análise,Média,,None,7375.79,80.2,-5.095393,-42.752561,2,None,
+4,2026-03-11 20:44:00,,Buraco na Via,Centro,Solicitação referente a buraco na via registrada pelo cidadão.,None,Média,Sensor IoT,None,,30.6,-5.125694,-42.69256,None,,
+5,2026-05-30 12:23:00,,Coleta de Lixo,None,Solicitação referente a coleta de lixo registrada pelo cidadão.,Em análise,Baixa,Telefone,Equipe Sul,4235.4,15.1,-5.027099,-42.76879,None,None,Morador não atendeu contato
+6,2026-03-29 03:18:00,,Iluminação Pública,Jóquei,Solicitação referente a iluminação pública registrada pelo cidadão.,Cancelado,,,,8263.3,10.7,-4.993249,-42.788314,3,None,None
+7,2026-01-05 03:59:00,2026-01-14 13:59:00,Ruído Urbano,Jóquei,Solicitação referente a ruído urbano registrada pelo cidadão.,Resolvido,Crítica,WhatsApp,Equipe Norte,2096.19,8.0,-4.998635,-42.684843,None,None,Registro duplicado identificado
+8,2026-03-21 12:42:00,,Alagamento,,Solicitação referente a alagamento registrada pelo cidadão.,,Crítica,WhatsApp,Mariana Costa,1098.86,56.7,-5.123754,-42.884382,1,,Aguardando vistoria técnica
+9,2026-05-27 18:30:00,,Ruído Urbano,Santa Maria,Solicitação referente a ruído urbano registrada pelo cidadão.,Em análise,Baixa,WhatsApp,Equipe Norte,,41.7,-5.071925,-42.739603,2,True,Priorizar por proximidade de escola
+10,2026-02-18 17:28:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,Em análise,Crítica,App,Mariana Costa,2183.37,82.8,-5.159376,-42.680158,4,False,Priorizar por proximidade de escola
+11,2026-04-08 00:24:00,2026-04-17 23:24:00,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,Resolvido,,Portal Web,Ana Silva,2481.8,75.3,-5.067799,,1,,Aguardando vistoria técnica
+12,2026-05-11 02:54:00,,Iluminação Pública,Mocambinho,Solicitação referente a iluminação pública registrada pelo cidadão.,Em análise,Crítica,Portal Web,Equipe Sul,3479.79,,-5.152783,-42.755378,5,False,
+13,2026-04-28 10:59:00,,Iluminação Pública,,Solicitação referente a iluminação pública registrada pelo cidadão.,,,App,Equipe Sul,5310.16,51.8,,-42.823218,5,False,Priorizar por proximidade de escola
+14,2026-01-27 04:16:00,,Poda de Árvore,None,Solicitação referente a poda de árvore registrada pelo cidadão.,Aberto,Baixa,,Mariana Costa,1388.87,33.2,-4.990888,-42.78881,1,True,
+15,2026-03-09 05:47:00,,Semáforo,None,Solicitação referente a semáforo registrada pelo cidadão.,Cancelado,,App,,,84.8,-5.055426,-42.716389,3,True,Morador não atendeu contato
+16,2026-02-23 21:15:00,,Ruído Urbano,None,Solicitação referente a ruído urbano registrada pelo cidadão.,,Crítica,WhatsApp,Equipe Sul,7524.41,15.3,-4.988433,-42.685235,1,False,
+17,2026-02-10 22:06:00,,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,Cancelado,,,Ana Silva,1952.89,29.6,-5.122205,-42.894794,2,,Morador não atendeu contato
+18,2026-01-30 08:11:00,,Buraco na Via,Centro,Solicitação referente a buraco na via registrada pelo cidadão.,None,None,WhatsApp,,992.75,30.5,-5.062601,-42.815257,,True,
+19,2026-04-21 02:42:00,2026-04-27 19:42:00,Buraco na Via,Ininga,Solicitação referente a buraco na via registrada pelo cidadão.,Resolvido,Baixa,Sensor IoT,Equipe Sul,6140.33,39.5,-5.107912,-42.871997,3,None,
+20,2026-02-23 13:50:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,None,Alta,WhatsApp,Equipe Norte,3799.84,76.3,-5.015448,-42.755053,,True,None
+21,2026-02-07 00:02:00,,Alagamento,Ininga,Solicitação referente a alagamento registrada pelo cidadão.,Em análise,,,Ana Silva,3914.6,69.1,-5.086073,-42.867534,2,,Registro duplicado identificado
+22,2026-05-23 07:58:00,,Coleta de Lixo,,Solicitação referente a coleta de lixo registrada pelo cidadão.,,,WhatsApp,Equipe Sul,5701.0,91.2,-5.041343,-42.74176,None,False,
+23,2026-05-14 15:40:00,,Iluminação Pública,Jóquei,Solicitação referente a iluminação pública registrada pelo cidadão.,Em análise,Crítica,None,Ana Silva,2054.44,8.2,-5.089563,-42.866383,,None,Priorizar por proximidade de escola
+24,2026-05-28 12:30:00,,Buraco na Via,Santa Maria,Solicitação referente a buraco na via registrada pelo cidadão.,Aberto,None,Portal Web,,7266.03,71.9,-5.043317,-42.851481,1,,Morador não atendeu contato
+25,2026-02-02 19:34:00,,Alagamento,,Solicitação referente a alagamento registrada pelo cidadão.,Aberto,Alta,Telefone,,,41.4,-5.131837,-42.842766,,,Morador não atendeu contato
+26,2026-01-05 23:34:00,,Buraco na Via,Mocambinho,Solicitação referente a buraco na via registrada pelo cidadão.,Aberto,Alta,Portal Web,Carlos Lima,5554.21,72.5,-5.128134,-42.895516,2,None,Registro duplicado identificado
+27,2026-02-11 09:06:00,,Buraco na Via,,,None,None,,Carlos Lima,5783.26,,-5.024971,-42.762007,2,None,None
+28,2026-05-10 20:21:00,,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,Aberto,Alta,WhatsApp,Carlos Lima,968.64,79.6,-5.078548,-42.738565,None,,Priorizar por proximidade de escola
+29,2026-03-13 14:15:00,,Alagamento,Santa Maria,Solicitação referente a alagamento registrada pelo cidadão.,,Crítica,WhatsApp,,2912.46,47.1,-5.115746,-42.838475,1,None,Registro duplicado identificado
+30,2026-05-06 14:50:00,,Coleta de Lixo,Santa Maria,Solicitação referente a coleta de lixo registrada pelo cidadão.,Aberto,Alta,Telefone,Mariana Costa,5904.85,45.7,-5.080644,-42.735894,5,,Morador não atendeu contato
+31,2026-02-19 06:47:00,,Alagamento,None,Solicitação referente a alagamento registrada pelo cidadão.,Cancelado,,,Carlos Lima,5104.98,28.8,-5.106524,,1,None,Morador não atendeu contato
+32,2026-01-04 18:18:00,,Buraco na Via,Dirceu,Solicitação referente a buraco na via registrada pelo cidadão.,Cancelado,,WhatsApp,None,8209.49,,-5.066733,-42.773055,5,True,Registro duplicado identificado
+33,2026-04-26 14:19:00,,Semáforo,Jóquei,,,Crítica,,Equipe Sul,,,-5.009825,-42.762387,4,False,
+34,2026-01-09 07:18:00,,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,,,Sensor IoT,Equipe Sul,679.33,76.1,-5.00118,-42.85648,3,,None
+35,2026-04-23 03:29:00,,Semáforo,Jóquei,,,Crítica,,Equipe Sul,4293.98,4.3,-5.102312,-42.844919,1,,
+36,2026-02-16 18:27:00,,Iluminação Pública,,Solicitação referente a iluminação pública registrada pelo cidadão.,,,None,Ana Silva,3009.83,82.4,-5.024329,-42.836592,1,,Aguardando vistoria técnica
+37,2026-05-19 14:26:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,Aberto,Baixa,WhatsApp,Carlos Lima,6449.25,19.9,-4.975189,-42.803614,4,False,Morador não atendeu contato
+38,2026-04-29 03:41:00,,Poda de Árvore,Jóquei,Solicitação referente a poda de árvore registrada pelo cidadão.,,Alta,Sensor IoT,Ana Silva,4364.7,94.1,-5.054234,-42.815611,3,True,Morador não atendeu contato
+39,2026-03-14 23:19:00,,Poda de Árvore,,Solicitação referente a poda de árvore registrada pelo cidadão.,,Baixa,,,7365.49,32.2,-5.090786,-42.694773,4,None,Priorizar por proximidade de escola
+40,2026-04-08 12:42:00,,Coleta de Lixo,,Solicitação referente a coleta de lixo registrada pelo cidadão.,,Crítica,Sensor IoT,,8203.82,32.2,-4.992542,,3,,None
+41,2026-06-09 22:25:00,,Buraco na Via,None,Solicitação referente a buraco na via registrada pelo cidadão.,,None,Telefone,,3279.68,73.0,-5.162461,-42.884947,4,True,Priorizar por proximidade de escola
+42,2026-02-12 22:19:00,,Ruído Urbano,Centro,Solicitação referente a ruído urbano registrada pelo cidadão.,Aberto,Alta,,Equipe Sul,2550.16,51.2,-5.003571,-42.862604,4,,
+43,2026-01-03 14:57:00,2026-01-10 21:57:00,Alagamento,Dirceu,Solicitação referente a alagamento registrada pelo cidadão.,Resolvido,Alta,Sensor IoT,Ana Silva,701.92,29.1,-5.025034,-42.799496,None,True,Registro duplicado identificado
+44,2026-04-12 08:00:00,,Ruído Urbano,Centro,Solicitação referente a ruído urbano registrada pelo cidadão.,None,Baixa,Sensor IoT,,7747.39,86.7,-5.121675,-42.723575,5,False,
+45,2026-01-09 18:23:00,,Buraco na Via,Renascença,Solicitação referente a buraco na via registrada pelo cidadão.,,Crítica,Telefone,Mariana Costa,6373.79,52.0,-5.058521,-42.699033,None,,
+46,2026-02-27 21:46:00,,Ruído Urbano,None,,,,,Equipe Norte,,51.7,-5.028706,-42.752085,,True,
+47,2026-01-17 20:52:00,,Buraco na Via,Santa Maria,Solicitação referente a buraco na via registrada pelo cidadão.,Cancelado,Crítica,Telefone,,,4.1,-5.145615,-42.848344,,None,Priorizar por proximidade de escola
+48,2026-06-07 13:17:00,,Coleta de Lixo,,Solicitação referente a coleta de lixo registrada pelo cidadão.,Aberto,,App,Ana Silva,3824.34,94.2,,-42.758138,2,,Aguardando vistoria técnica
+49,2026-03-27 07:08:00,,Iluminação Pública,None,Solicitação referente a iluminação pública registrada pelo cidadão.,,,App,Mariana Costa,1824.27,31.9,-4.980888,-42.899376,3,None,Morador não atendeu contato
+50,2026-01-04 11:50:00,,Buraco na Via,Centro,Solicitação referente a buraco na via registrada pelo cidadão.,,None,Sensor IoT,,,71.3,-5.01341,-42.795226,2,,
+51,2026-01-08 01:30:00,,Poda de Árvore,Ininga,Solicitação referente a poda de árvore registrada pelo cidadão.,,,None,Carlos Lima,4208.06,8.2,-5.156207,-42.839496,,,
+52,2026-01-30 20:41:00,,Ruído Urbano,Mocambinho,Solicitação referente a ruído urbano registrada pelo cidadão.,,Crítica,Telefone,,3701.19,79.5,-5.016781,-42.831239,3,,Aguardando vistoria técnica
+53,2026-02-03 17:03:00,,Alagamento,Renascença,Solicitação referente a alagamento registrada pelo cidadão.,None,Média,Telefone,,5721.51,90.4,-4.977673,-42.888682,2,None,
+54,2026-05-23 11:07:00,,Coleta de Lixo,Santa Maria,Solicitação referente a coleta de lixo registrada pelo cidadão.,,Alta,App,Mariana Costa,7196.21,59.1,-5.164487,-42.695601,3,,
+55,2026-02-06 18:42:00,,Poda de Árvore,Centro,Solicitação referente a poda de árvore registrada pelo cidadão.,Cancelado,Baixa,Sensor IoT,,852.6,43.8,-5.104556,-42.828636,1,False,Registro duplicado identificado
+56,2026-04-19 15:38:00,,Coleta de Lixo,None,Solicitação referente a coleta de lixo registrada pelo cidadão.,Cancelado,,Sensor IoT,Equipe Sul,1038.34,65.3,-5.029902,-42.890008,1,False,Morador não atendeu contato
+57,2026-03-25 03:00:00,,Coleta de Lixo,Dirceu,Solicitação referente a coleta de lixo registrada pelo cidadão.,Cancelado,None,None,Equipe Sul,3281.35,80.1,,,2,,
+58,2026-01-30 12:01:00,2026-02-01 09:01:00,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,Resolvido,None,Telefone,Equipe Norte,3954.02,42.2,-5.078508,-42.811901,,False,Morador não atendeu contato
+59,2026-03-31 11:46:00,,Coleta de Lixo,Mocambinho,Solicitação referente a coleta de lixo registrada pelo cidadão.,,,,Mariana Costa,945.61,15.1,-5.154176,-42.690716,None,None,
+60,2026-04-23 02:30:00,,Ruído Urbano,Jóquei,Solicitação referente a ruído urbano registrada pelo cidadão.,Cancelado,,App,,5059.75,,-5.092565,-42.836843,2,None,
+61,2026-05-27 20:12:00,2026-06-03 08:12:00,Semáforo,None,Solicitação referente a semáforo registrada pelo cidadão.,Resolvido,Alta,,Equipe Sul,,10.4,-5.097878,-42.742851,4,,Priorizar por proximidade de escola
+62,2026-04-10 13:49:00,2026-04-17 20:49:00,Alagamento,Centro,Solicitação referente a alagamento registrada pelo cidadão.,Resolvido,Alta,Sensor IoT,None,6725.29,9.5,-5.110329,-42.740779,3,,Aguardando vistoria técnica
+63,2026-02-03 19:45:00,,Semáforo,Renascença,Solicitação referente a semáforo registrada pelo cidadão.,Aberto,,,Equipe Norte,6927.02,71.1,-5.059457,-42.757875,,,Registro duplicado identificado
+64,2026-02-27 04:09:00,,Ruído Urbano,Ininga,Solicitação referente a ruído urbano registrada pelo cidadão.,Aberto,Baixa,None,,4354.75,50.8,-4.985958,-42.764033,3,None,None
+65,2026-03-02 14:39:00,2026-03-10 16:39:00,Poda de Árvore,,Solicitação referente a poda de árvore registrada pelo cidadão.,Resolvido,,WhatsApp,Mariana Costa,2050.3,75.4,-5.129257,-42.750772,5,,
+66,2026-03-06 01:41:00,,Alagamento,Ininga,Solicitação referente a alagamento registrada pelo cidadão.,Cancelado,Crítica,,Equipe Norte,6070.0,8.5,-5.075643,-42.787062,4,,Morador não atendeu contato
+67,2026-04-09 02:23:00,,Iluminação Pública,Renascença,Solicitação referente a iluminação pública registrada pelo cidadão.,Em análise,None,None,Carlos Lima,6743.42,79.7,-5.140854,,2,True,Morador não atendeu contato
+68,2026-03-15 07:19:00,,Semáforo,,Solicitação referente a semáforo registrada pelo cidadão.,Aberto,Média,Telefone,,,86.9,-5.166549,-42.786617,,True,
+69,2026-01-18 16:34:00,,Alagamento,None,Solicitação referente a alagamento registrada pelo cidadão.,None,Alta,,Mariana Costa,,37.4,,-42.821439,2,None,
+70,2026-04-29 22:30:00,,Coleta de Lixo,Ininga,Solicitação referente a coleta de lixo registrada pelo cidadão.,,Alta,App,,,19.8,-4.983984,-42.830569,None,,Aguardando vistoria técnica
+71,2026-03-11 03:51:00,2026-03-15 20:51:00,Semáforo,,Solicitação referente a semáforo registrada pelo cidadão.,Resolvido,Alta,,Carlos Lima,7612.85,47.9,-4.975895,-42.785759,2,,
+72,2026-01-21 10:42:00,2026-01-24 18:42:00,Semáforo,,Solicitação referente a semáforo registrada pelo cidadão.,Resolvido,,Portal Web,Ana Silva,6122.72,43.2,-4.978562,-42.764733,1,True,
+73,2026-02-06 19:43:00,,Coleta de Lixo,Ininga,Solicitação referente a coleta de lixo registrada pelo cidadão.,,None,Sensor IoT,Equipe Norte,2067.08,,-5.137778,-42.801017,2,None,Registro duplicado identificado
+74,2026-01-30 00:47:00,,Semáforo,None,Solicitação referente a semáforo registrada pelo cidadão.,Em análise,Baixa,,,1071.55,21.0,-5.024264,-42.680302,2,,Registro duplicado identificado
+75,2026-01-17 17:34:00,2026-01-27 07:34:00,Buraco na Via,Dirceu,Solicitação referente a buraco na via registrada pelo cidadão.,Resolvido,,Portal Web,Carlos Lima,6073.43,76.3,-5.144514,-42.855784,1,,
+76,2026-01-17 09:25:00,,Alagamento,Santa Maria,Solicitação referente a alagamento registrada pelo cidadão.,,,Telefone,Mariana Costa,6556.37,93.4,-5.075505,-42.750376,3,False,Priorizar por proximidade de escola
+77,2026-03-19 05:10:00,2026-03-26 20:10:00,Coleta de Lixo,Renascença,Solicitação referente a coleta de lixo registrada pelo cidadão.,Resolvido,Média,Portal Web,,8057.81,8.0,-4.969166,-42.839621,2,None,
+78,2026-05-25 01:52:00,,Iluminação Pública,,Solicitação referente a iluminação pública registrada pelo cidadão.,,Média,,None,2308.4,,-4.983311,-42.779973,4,,Morador não atendeu contato
+79,2026-05-04 14:13:00,2026-05-11 03:13:00,Coleta de Lixo,Renascença,Solicitação referente a coleta de lixo registrada pelo cidadão.,Resolvido,Alta,None,None,7333.7,33.5,-5.01026,-42.786704,2,,Priorizar por proximidade de escola
+80,2026-03-05 05:52:00,2026-03-11 10:52:00,Poda de Árvore,Renascença,Solicitação referente a poda de árvore registrada pelo cidadão.,Resolvido,Crítica,,Equipe Sul,1678.4,45.1,-5.065552,-42.880189,4,False,
+81,2026-05-18 00:54:00,,Buraco na Via,Renascença,Solicitação referente a buraco na via registrada pelo cidadão.,Aberto,Baixa,None,,6511.67,55.0,-5.053823,-42.883823,5,None,
+82,2026-03-28 17:23:00,,Alagamento,None,Solicitação referente a alagamento registrada pelo cidadão.,,,Sensor IoT,,,4.2,-5.001167,-42.785747,3,,
+83,2026-05-10 16:34:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,Cancelado,,WhatsApp,Ana Silva,6948.61,94.1,-5.002681,,None,,
+84,2026-05-30 15:10:00,,Alagamento,Santa Maria,Solicitação referente a alagamento registrada pelo cidadão.,None,,App,Mariana Costa,,91.1,-5.166023,-42.830988,,None,None
+85,2026-05-13 06:35:00,2026-05-20 09:35:00,Semáforo,None,Solicitação referente a semáforo registrada pelo cidadão.,Resolvido,,Sensor IoT,Equipe Norte,3252.86,51.4,-5.028068,-42.709116,5,None,Priorizar por proximidade de escola
+86,2026-03-18 09:45:00,,Semáforo,Renascença,,Em análise,Baixa,,,4119.94,69.4,-5.04957,-42.780498,,False,Morador não atendeu contato
+87,2026-03-07 23:30:00,,Alagamento,Jóquei,Solicitação referente a alagamento registrada pelo cidadão.,Em análise,None,Portal Web,Ana Silva,7936.06,59.3,-5.119084,-42.752637,1,True,Priorizar por proximidade de escola
+88,2026-05-21 05:26:00,,Semáforo,,Solicitação referente a semáforo registrada pelo cidadão.,,Baixa,None,,5557.54,,-5.008568,-42.756494,1,False,Priorizar por proximidade de escola
+89,2026-02-17 23:55:00,2026-02-27 09:55:00,Iluminação Pública,Centro,Solicitação referente a iluminação pública registrada pelo cidadão.,Resolvido,None,,Equipe Sul,2592.46,32.5,-5.035324,-42.78465,None,,Registro duplicado identificado
+90,2026-02-17 00:47:00,2026-02-25 12:47:00,Buraco na Via,,,Resolvido,Crítica,WhatsApp,,5758.46,61.5,-5.080182,-42.827856,3,,Morador não atendeu contato
+91,2026-03-10 10:19:00,,Iluminação Pública,Jóquei,Solicitação referente a iluminação pública registrada pelo cidadão.,None,,WhatsApp,Equipe Norte,5584.01,11.8,-5.084863,-42.789445,5,True,
+92,2026-02-04 15:09:00,,Alagamento,Renascença,Solicitação referente a alagamento registrada pelo cidadão.,Cancelado,,Telefone,Ana Silva,3581.42,51.8,-5.124134,-42.845558,2,None,Priorizar por proximidade de escola
+93,2026-05-21 16:12:00,,Coleta de Lixo,Renascença,Solicitação referente a coleta de lixo registrada pelo cidadão.,None,,Sensor IoT,Ana Silva,7274.77,69.0,,-42.801994,,,
+94,2026-04-12 08:52:00,,Alagamento,Ininga,Solicitação referente a alagamento registrada pelo cidadão.,Aberto,,None,None,461.34,95.4,,-42.694569,3,,Morador não atendeu contato
+95,2026-01-21 21:42:00,,Poda de Árvore,Renascença,Solicitação referente a poda de árvore registrada pelo cidadão.,,Alta,Portal Web,Equipe Sul,1078.89,12.7,-4.994687,-42.733641,,None,Priorizar por proximidade de escola
+96,2026-02-18 23:48:00,,Poda de Árvore,Santa Maria,Solicitação referente a poda de árvore registrada pelo cidadão.,Aberto,,App,Mariana Costa,5257.65,,-5.045272,-42.801783,4,True,Priorizar por proximidade de escola
+97,2026-05-09 09:14:00,,Alagamento,Renascença,Solicitação referente a alagamento registrada pelo cidadão.,,None,None,,4942.34,23.1,-4.963004,-42.785325,3,,
+98,2026-04-17 13:09:00,2026-04-21 15:09:00,Coleta de Lixo,None,Solicitação referente a coleta de lixo registrada pelo cidadão.,Resolvido,Baixa,,,4067.03,68.1,-4.977904,-42.776275,3,,Registro duplicado identificado
+99,2026-01-24 17:46:00,,Buraco na Via,Santa Maria,Solicitação referente a buraco na via registrada pelo cidadão.,,None,Telefone,,5752.32,18.5,-5.017896,-42.777053,,,Aguardando vistoria técnica
+100,2026-03-04 22:38:00,,Coleta de Lixo,None,Solicitação referente a coleta de lixo registrada pelo cidadão.,,,WhatsApp,Mariana Costa,2788.0,62.5,-5.094475,-42.705781,None,,Registro duplicado identificado
+101,2026-01-05 08:35:00,,Semáforo,Jóquei,Solicitação referente a semáforo registrada pelo cidadão.,None,Média,,Mariana Costa,1363.3,80.1,-5.032532,-42.749334,None,,Registro duplicado identificado
+102,2026-05-19 20:03:00,,Ruído Urbano,Ininga,Solicitação referente a ruído urbano registrada pelo cidadão.,None,Crítica,,Ana Silva,8038.48,39.9,,-42.744423,,True,
+103,2026-01-02 17:35:00,,Alagamento,Jóquei,Solicitação referente a alagamento registrada pelo cidadão.,Cancelado,Alta,None,Carlos Lima,4590.91,67.1,-4.97266,-42.860561,4,False,
+104,2026-04-06 12:29:00,,Poda de Árvore,Mocambinho,Solicitação referente a poda de árvore registrada pelo cidadão.,None,,,Carlos Lima,2605.79,95.2,-5.163346,-42.810839,1,False,Aguardando vistoria técnica
+105,2026-05-16 01:14:00,,Poda de Árvore,,Solicitação referente a poda de árvore registrada pelo cidadão.,Em análise,None,None,Carlos Lima,,7.6,,-42.776028,,True,Registro duplicado identificado
+106,2026-03-18 05:36:00,,Ruído Urbano,Santa Maria,Solicitação referente a ruído urbano registrada pelo cidadão.,Em análise,,None,,5780.63,71.1,-5.025245,-42.882746,2,,Registro duplicado identificado
+107,2026-01-08 20:17:00,,Semáforo,Mocambinho,Solicitação referente a semáforo registrada pelo cidadão.,,Média,None,,3075.93,65.4,-5.152004,-42.763905,2,,Registro duplicado identificado
+108,2026-04-03 03:05:00,,Semáforo,Renascença,Solicitação referente a semáforo registrada pelo cidadão.,Aberto,Baixa,Sensor IoT,None,,8.8,-5.053033,-42.787263,2,None,
+109,2026-04-10 02:46:00,,Coleta de Lixo,,Solicitação referente a coleta de lixo registrada pelo cidadão.,None,Crítica,WhatsApp,,4467.7,26.2,-5.139354,-42.863214,2,,Morador não atendeu contato
+110,2026-01-28 04:19:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,Aberto,Alta,Sensor IoT,,3278.67,41.6,-5.033282,-42.769234,4,,Morador não atendeu contato
+111,2026-05-28 07:20:00,,Ruído Urbano,Santa Maria,Solicitação referente a ruído urbano registrada pelo cidadão.,Cancelado,,None,,3153.43,95.7,-5.0088,-42.894078,4,,None
+112,2026-02-05 20:19:00,,Coleta de Lixo,Santa Maria,Solicitação referente a coleta de lixo registrada pelo cidadão.,Em análise,None,Telefone,Carlos Lima,,95.1,-5.085831,-42.788545,1,,
+113,2026-03-05 21:42:00,2026-03-07 17:42:00,Poda de Árvore,,Solicitação referente a poda de árvore registrada pelo cidadão.,Resolvido,,Portal Web,,452.98,38.7,,-42.8053,4,,Morador não atendeu contato
+114,2026-01-07 15:06:00,2026-01-12 03:06:00,Iluminação Pública,Ininga,Solicitação referente a iluminação pública registrada pelo cidadão.,Resolvido,Baixa,App,,7079.7,33.3,-5.060566,-42.823374,None,,Aguardando vistoria técnica
+115,2026-01-28 21:51:00,,Poda de Árvore,Mocambinho,Solicitação referente a poda de árvore registrada pelo cidadão.,Em análise,,None,None,4424.67,41.2,-5.002471,-42.761453,,True,
+116,2026-01-02 22:13:00,,Poda de Árvore,Ininga,Solicitação referente a poda de árvore registrada pelo cidadão.,Em análise,Alta,,,4941.27,35.4,-5.146069,-42.752446,,None,Priorizar por proximidade de escola
+117,2026-06-08 05:52:00,,Buraco na Via,,Solicitação referente a buraco na via registrada pelo cidadão.,,None,Portal Web,Mariana Costa,5049.22,23.3,-5.091606,-42.868901,,,Registro duplicado identificado
+118,2026-05-06 09:08:00,,Semáforo,,Solicitação referente a semáforo registrada pelo cidadão.,Em análise,,WhatsApp,Equipe Sul,,13.5,-4.967596,-42.788804,,,Priorizar por proximidade de escola
+119,2026-01-09 08:14:00,,Ruído Urbano,,Solicitação referente a ruído urbano registrada pelo cidadão.,None,None,WhatsApp,Equipe Sul,4842.78,49.3,-5.113743,-42.780517,1,,
+120,2026-01-09 14:16:00,2026-01-18 20:16:00,Ruído Urbano,Ininga,Solicitação referente a ruído urbano registrada pelo cidadão.,Resolvido,,App,,3776.97,23.1,-5.046536,-42.822861,3,None,Registro duplicado identificado
