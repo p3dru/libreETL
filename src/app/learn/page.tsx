@@ -13,8 +13,8 @@ export default function LearnPage() {
       
       {/* Header */}
       <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '72px', height: '72px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(99,102,241,0.2), rgba(99,102,241,0.05))', color: 'var(--primary)', marginBottom: '2rem', boxShadow: '0 0 40px rgba(99, 102, 241, 0.2)', border: '1px solid rgba(99,102,241,0.3)' }}>
-          <BookOpen size={36} />
+        <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '80px', height: '80px', borderRadius: '50%', marginBottom: '2rem', boxShadow: '0 0 40px rgba(99, 102, 241, 0.2)', overflow: 'hidden', border: '2px solid rgba(99,102,241,0.3)' }}>
+          <img src="/image.png" alt="DataQ Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
         <h1 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1.5rem', background: 'linear-gradient(to right, #818cf8, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', letterSpacing: '-0.03em' }}>
           {t('learn.title')}
