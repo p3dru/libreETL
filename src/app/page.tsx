@@ -22,6 +22,11 @@ export default function Home() {
   return (
     <>
       <div className="home-parallax-bg" />
+      {/* Decorative Side Tech Images */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '1000px', overflow: 'hidden', pointerEvents: 'none', zIndex: 0 }}>
+        <img src="/tech-left.png" alt="" className="floating-side-image" style={{ left: '-50px', top: '5%' }} />
+        <img src="/tech-right.png" alt="" className="floating-side-image" style={{ right: '-50px', top: '25%' }} />
+      </div>
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
       <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', padding: '4rem 0' }}>
         <h1 className="font-serif" style={{ fontSize: '3.5rem', lineHeight: 1.2, marginBottom: '1.5rem', background: 'linear-gradient(to right, var(--foreground), #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
