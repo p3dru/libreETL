@@ -53,13 +53,13 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
         </div>
       </div>
       
-      <div style={{ overflowX: 'auto' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+      <div className="data-table-container">
+        <table className="data-table">
           <thead>
             {table.getHeaderGroups().map(headerGroup => (
-              <tr key={headerGroup.id} style={{ backgroundColor: 'rgba(255,255,255,0.02)' }}>
+              <tr key={headerGroup.id}>
                 {headerGroup.headers.map(header => (
-                  <th key={header.id} style={{ padding: '1rem', borderBottom: '1px solid var(--surface-border)', fontWeight: 600, color: '#94a3b8', fontSize: '0.875rem', whiteSpace: 'nowrap' }}>
+                  <th key={header.id}>
                     {header.isPlaceholder
                       ? null
                       : flexRender(
@@ -73,9 +73,9 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
           </thead>
           <tbody>
             {table.getRowModel().rows.map(row => (
-              <tr key={row.id} style={{ borderBottom: '1px solid var(--surface-border)' }}>
+              <tr key={row.id}>
                 {row.getVisibleCells().map(cell => (
-                  <td key={cell.id} style={{ padding: '0.75rem 1rem', fontSize: '0.875rem', whiteSpace: 'nowrap', maxWidth: '300px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <td key={cell.id} style={{ maxWidth: '300px', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {flexRender(cell.column.columnDef.cell, cell.getContext())}
                   </td>
                 ))}
@@ -91,16 +91,18 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
         </span>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
           <button 
+            className="btn btn-secondary"
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
-            style={{ padding: '0.5rem', background: 'var(--surface)', border: '1px solid var(--surface-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: table.getCanPreviousPage() ? 1 : 0.5, cursor: table.getCanPreviousPage() ? 'pointer' : 'not-allowed' }}
+            style={{ padding: '0.5rem', opacity: table.getCanPreviousPage() ? 1 : 0.5, cursor: table.getCanPreviousPage() ? 'pointer' : 'not-allowed' }}
           >
             <ChevronLeft size={16} />
           </button>
           <button 
+            className="btn btn-secondary"
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
-            style={{ padding: '0.5rem', background: 'var(--surface)', border: '1px solid var(--surface-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: table.getCanNextPage() ? 1 : 0.5, cursor: table.getCanNextPage() ? 'pointer' : 'not-allowed' }}
+            style={{ padding: '0.5rem', opacity: table.getCanNextPage() ? 1 : 0.5, cursor: table.getCanNextPage() ? 'pointer' : 'not-allowed' }}
           >
             <ChevronRight size={16} />
           </button>
