@@ -40,7 +40,7 @@ const Heading2 = ({ icon, children, color = 'var(--primary)' }: { icon: React.Re
 const InfoBox = ({ title, children, color = 'var(--primary)' }: { title?: string, children: React.ReactNode, color?: string }) => (
   <div className="glass" style={{ padding: '1.25rem 1.5rem', borderRadius: 'var(--radius-md)', borderLeft: `4px solid ${color}`, marginBottom: '1.25rem' }}>
     {title && <h5 style={{ margin: '0 0 0.4rem 0', fontWeight: 600, color }}>{title}</h5>}
-    <div style={{ fontSize: '0.95rem', color: '#94a3b8', lineHeight: 1.7, margin: 0 }}>{children}</div>
+    <div style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', lineHeight: 1.7, margin: 0 }}>{children}</div>
   </div>
 );
 
@@ -48,7 +48,7 @@ const ParamRow = ({ name, type, desc }: { name: string, type: string, desc: stri
   <div style={{ display: 'flex', gap: '1rem', padding: '0.85rem 0', borderBottom: '1px solid var(--surface-border)', alignItems: 'flex-start' }}>
     <Code>{name}</Code>
     <span style={{ fontSize: '0.75rem', color: 'var(--warning)', fontFamily: 'monospace', marginTop: '2px', whiteSpace: 'nowrap' as const }}>{type}</span>
-    <p style={{ margin: 0, fontSize: '0.9rem', color: '#94a3b8', lineHeight: 1.5 }}>{desc}</p>
+    <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>{desc}</p>
   </div>
 );
 
@@ -105,7 +105,7 @@ export default function LearnWikiPage() {
             <button key={s.id} onClick={() => scrollTo(s.id)} style={{
               textAlign: 'left', padding: '0.5rem 0.75rem', borderRadius: '6px', border: 'none', cursor: 'pointer', fontSize: '0.875rem',
               fontWeight: activeSection === s.id ? 600 : 400,
-              color: activeSection === s.id ? 'var(--primary)' : '#94a3b8',
+              color: activeSection === s.id ? 'var(--primary)' : 'var(--text-secondary)',
               background: activeSection === s.id ? 'rgba(99,102,241,0.12)' : 'transparent',
               transition: 'all 0.18s',
             }}>{s.label}</button>
@@ -121,15 +121,15 @@ export default function LearnWikiPage() {
           <div style={{ marginBottom: '2rem' }}>
             <Tag>{t('learn.nav.intro')}</Tag>
             <h1 className="font-serif" style={{ fontSize: '2.8rem', fontWeight: 800, margin: '0.75rem 0 1rem', lineHeight: 1.2 }}>{t('learn.page.title')}</h1>
-            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75 }}>{t('learn.page.subtitle')}</p>
-            <p style={{ fontSize: '1.05rem', color: '#94a3b8', lineHeight: 1.75, marginTop: '0.75rem' }}>{t('learn.page.subtitle2')}</p>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.75 }}>{t('learn.page.subtitle')}</p>
+            <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', lineHeight: 1.75, marginTop: '0.75rem' }}>{t('learn.page.subtitle2')}</p>
           </div>
           <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)', borderLeft: '4px solid var(--success)', marginBottom: '1.5rem' }}>
             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
               <ShieldAlert size={20} style={{ color: 'var(--success)', flexShrink: 0, marginTop: '2px' }} />
               <div>
                 <h4 style={{ fontWeight: 700, margin: '0 0 0.4rem', color: 'var(--success)' }}>{t('learn.privacy.title')}</h4>
-                <p style={{ fontSize: '0.92rem', color: '#94a3b8', margin: 0, lineHeight: 1.65 }}>{t('learn.privacy.desc')}</p>
+                <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.65 }}>{t('learn.privacy.desc')}</p>
               </div>
             </div>
           </div>
@@ -139,23 +139,23 @@ export default function LearnWikiPage() {
         {/* UPLOAD */}
         <section id="upload" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<UploadCloud size={22} />}>{t('learn.upload.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.upload.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.upload.intro')}</p>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.upload.formats.title')}</h3>
           <div style={{ display: 'flex', flexDirection: 'column' as const, gap: '0.75rem', marginBottom: '2rem' }}>
             <InfoBox title={t('learn.upload.csv.title')}>{t('learn.upload.csv.desc')}</InfoBox>
             <InfoBox title={t('learn.upload.xlsx.title')}>{t('learn.upload.xlsx.desc')}</InfoBox>
           </div>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.upload.after.title')}</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.upload.after.desc')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.upload.after.desc')}</p>
           <InfoBox title={t('learn.upload.tip.title')} color="var(--warning)">{t('learn.upload.tip.desc')}</InfoBox>
         </section>
 
         {/* DIAGNOSTICS */}
         <section id="diagnostics" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<Activity size={22} />} color="var(--success)">{t('learn.diag.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.diag.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.diag.intro')}</p>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.5rem', color: 'var(--foreground)' }}>{t('learn.diag.score.title')}</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.diag.score.desc')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1rem' }}>{t('learn.diag.score.desc')}</p>
           <div style={{ display: 'flex', flexDirection: 'column' as const, marginBottom: '2rem' }}>
             <ParamRow name={t('learn.param.nulls')} type={t('learn.param.penalty.high')} desc={t('learn.diag.nulls')} />
             <ParamRow name={t('learn.param.dupes')} type={t('learn.param.penalty.med')} desc={t('learn.diag.dupes')} />
@@ -178,8 +178,8 @@ export default function LearnWikiPage() {
         {/* PIPELINE */}
         <section id="pipeline" style={{ marginBottom: '3rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<Layout size={22} />} color="#8b5cf6">{t('learn.pipeline.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.pipeline.intro')}</p>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '2rem' }}>{t('learn.pipeline.nondestructive')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.pipeline.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '2rem' }}>{t('learn.pipeline.nondestructive')}</p>
           <InfoBox title={t('learn.pipeline.internals.title')} color="#8b5cf6">{t('learn.pipeline.internals.desc')}</InfoBox>
         </section>
 
@@ -193,9 +193,9 @@ export default function LearnWikiPage() {
                   <h4 style={{ fontWeight: 700, margin: 0, fontSize: '1rem' }}>{t(`learn.transform.${tr.key}.name`)}</h4>
                   <Code>{t(`learn.transform.${tr.key}.param`)}</Code>
                 </div>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: '0 0 0.6rem', lineHeight: 1.6 }}>{t(`learn.transform.${tr.key}.desc`)}</p>
-                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: 0 }}>
-                  <strong style={{ color: '#94a3b8' }}>{t('learn.when')}:</strong> {t(`learn.transform.${tr.key}.use`)}
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: '0 0 0.6rem', lineHeight: 1.6 }}>{t(`learn.transform.${tr.key}.desc`)}</p>
+                <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', margin: 0 }}>
+                  <strong style={{ color: 'var(--text-secondary)' }}>{t('learn.when')}:</strong> {t(`learn.transform.${tr.key}.use`)}
                 </p>
               </div>
             ))}
@@ -205,7 +205,7 @@ export default function LearnWikiPage() {
         {/* MERGE */}
         <section id="merge" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<GitMerge size={22} />} color="#ec4899">{t('learn.merge.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.merge.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.merge.intro')}</p>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.merge.config.title')}</h3>
           <div style={{ display: 'flex', flexDirection: 'column' as const }}>
             <ParamRow name={t('learn.param.primary')} type={t('learn.param.required')} desc={t('learn.merge.primary')} />
@@ -219,17 +219,17 @@ export default function LearnWikiPage() {
         {/* HISTORY */}
         <section id="history" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<Save size={22} />} color="var(--warning)">{t('learn.history.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.intro')}</p>
           <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '1rem', color: 'var(--foreground)' }}>{t('learn.history.recipes.title')}</h3>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.25rem' }}>{t('learn.history.recipes.desc')}</p>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.recipes.use')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.25rem' }}>{t('learn.history.recipes.desc')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.history.recipes.use')}</p>
           <InfoBox title={t('learn.history.recipes.json.title')} color="var(--warning)">{t('learn.history.recipes.json.desc')}</InfoBox>
         </section>
 
         {/* EXPORT */}
         <section id="export" style={{ scrollMarginTop: '110px' }}>
           <Heading2 icon={<Download size={22} />}>{t('learn.export.title')}</Heading2>
-          <p style={{ color: '#94a3b8', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.export.intro')}</p>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.export.intro')}</p>
           <div style={{ display: 'flex', flexDirection: 'column' as const }}>
             <ParamRow name={t('learn.param.csv')} type={t('learn.param.default')} desc={t('learn.export.csv')} />
             <ParamRow name={t('learn.param.xlsx')} type={t('learn.param.available')} desc={t('learn.export.xlsx')} />

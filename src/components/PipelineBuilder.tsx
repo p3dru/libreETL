@@ -216,23 +216,23 @@ export default function PipelineBuilder({ steps, onChange, columns }: PipelineBu
           </div>
           {templates.length > 0 ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{t('pipeline.builder.savedRecipes')}</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{t('pipeline.builder.savedRecipes')}</span>
               {templates.map(tmpl => (
                 <button key={tmpl.id} onClick={() => handleLoadTemplate(tmpl)} style={{ textAlign: 'left', padding: '0.5rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--surface-border)', borderRadius: '4px', cursor: 'pointer', color: 'inherit' }}>
                   <div style={{ fontSize: '0.875rem', fontWeight: 500 }}>{tmpl.name}</div>
-                  <div style={{ fontSize: '0.75rem', color: '#94a3b8' }}>{tmpl.steps.length} {t('pipeline.builder.steps')}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>{tmpl.steps.length} {t('pipeline.builder.steps')}</div>
                 </button>
               ))}
             </div>
           ) : (
-            <p style={{ fontSize: '0.75rem', color: '#94a3b8', margin: 0 }}>{t('pipeline.builder.noRecipes')}</p>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0 }}>{t('pipeline.builder.noRecipes')}</p>
           )}
         </div>
       )}
 
       <div style={{ padding: '1.5rem', flex: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
         {steps.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#94a3b8' }}>
+          <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-secondary)' }}>
             <p>{t('pipeline.builder.empty')}</p>
             <p style={{ fontSize: '0.875rem' }}>{t('pipeline.builder.emptyHint')}</p>
           </div>
@@ -259,7 +259,7 @@ export default function PipelineBuilder({ steps, onChange, columns }: PipelineBu
         <div style={{ marginTop: '1rem', position: 'relative' }}>
           {isAdding ? (
             <div style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)', borderRadius: 'var(--radius-md)', padding: '1rem' }}>
-              <h4 style={{ fontSize: '0.875rem', color: '#94a3b8', marginBottom: '0.75rem' }}>{t('pipeline.builder.selectTransform')}</h4>
+              <h4 style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>{t('pipeline.builder.selectTransform')}</h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 {transformationTypes.map(type => (
                   <button
@@ -276,7 +276,7 @@ export default function PipelineBuilder({ steps, onChange, columns }: PipelineBu
               </div>
               <button
                 onClick={() => setIsAdding(false)}
-                style={{ width: '100%', marginTop: '0.75rem', padding: '0.5rem', color: '#94a3b8', fontSize: '0.875rem', border: 'none', background: 'transparent', cursor: 'pointer' }}
+                style={{ width: '100%', marginTop: '0.75rem', padding: '0.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem', border: 'none', background: 'transparent', cursor: 'pointer' }}
               >
                 {t('pipeline.builder.cancel')}
               </button>
@@ -284,9 +284,9 @@ export default function PipelineBuilder({ steps, onChange, columns }: PipelineBu
           ) : (
             <button
               onClick={() => setIsAdding(true)}
-              style={{ width: '100%', padding: '1rem', border: '2px dashed var(--surface-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: '#94a3b8', transition: 'all 0.2s', background: 'transparent', cursor: 'pointer' }}
+              style={{ width: '100%', padding: '1rem', border: '2px dashed var(--surface-border)', borderRadius: 'var(--radius-md)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', color: 'var(--text-secondary)', transition: 'all 0.2s', background: 'transparent', cursor: 'pointer' }}
               onMouseOver={e => { e.currentTarget.style.borderColor = 'var(--primary)'; e.currentTarget.style.color = 'var(--primary)'; }}
-              onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--surface-border)'; e.currentTarget.style.color = '#94a3b8'; }}
+              onMouseOut={e => { e.currentTarget.style.borderColor = 'var(--surface-border)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
             >
               <Plus size={18} /> {t('pipeline.builder.addStep')}
             </button>

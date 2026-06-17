@@ -154,20 +154,20 @@ export default function FileUploader({ onDatasetLoaded }: FileUploaderProps) {
         {isLoading ? (
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
             <div style={{ width: '40px', height: '40px', border: '3px solid var(--surface-border)', borderTopColor: 'var(--primary)', borderRadius: '50%', animation: 'spin 1s linear infinite' }} />
-            <p style={{ color: '#94a3b8' }}>{t('uploader.processing')}</p>
+            <p style={{ color: 'var(--text-secondary)' }}>{t('uploader.processing')}</p>
           </div>
         ) : (
           <>
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem', color: isDragging ? 'var(--primary)' : '#94a3b8' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem', color: isDragging ? 'var(--primary)' : 'var(--text-secondary)' }}>
               <UploadCloud size={48} />
             </div>
             <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{t('uploader.drag')}</h3>
-            <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>{t('uploader.browse')}</p>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{t('uploader.browse')}</p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem' }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', color: '#cbd5e1' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--surface-hover)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                 <FileText size={16} /> .CSV
               </span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(255,255,255,0.05)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', color: '#cbd5e1' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: 'var(--surface-hover)', padding: '0.25rem 0.75rem', borderRadius: 'var(--radius-full)', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
                 <FileText size={16} /> .XLSX
               </span>
             </div>

@@ -48,7 +48,7 @@ export default function HistoryPage() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
         <div>
           <h2 className="font-serif" style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('history.title')}</h2>
-          <p style={{ color: '#94a3b8' }}>{t('history.subtitle')}</p>
+          <p style={{ color: 'var(--text-secondary)' }}>{t('history.subtitle')}</p>
         </div>
         <Link href="/upload" className="btn btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           {t('history.newUpload')} <ArrowRight size={18} />
@@ -61,7 +61,7 @@ export default function HistoryPage() {
             <Database size={32} />
           </div>
           <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{t('history.empty.title')}</h3>
-          <p style={{ color: '#94a3b8', marginBottom: '2rem', maxWidth: '400px', margin: '0 auto' }}>
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem', maxWidth: '400px', margin: '0 auto' }}>
             {t('history.empty.desc')}
           </p>
           <div style={{ marginTop: '2rem' }}>
@@ -81,7 +81,7 @@ export default function HistoryPage() {
                 </button>
               </div>
 
-              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', color: '#94a3b8', fontSize: '0.875rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1.5rem', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                   <Table size={14} /> {dataset.rows.length} {t('history.rows')}
                 </div>

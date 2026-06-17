@@ -31,7 +31,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
   const renderControls = () => {
     switch (step.type) {
       case 'REMOVE_DUPLICATES':
-        return <p style={{ fontSize: '0.875rem', color: '#94a3b8' }}>Removes all rows with identical values.</p>;
+        return <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Removes all rows with identical values.</p>;
       
       case 'REMOVE_NULLS':
       case 'REMOVE_COLUMN':
@@ -51,7 +51,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
             <select value={(step as any).oldName} onChange={e => onUpdate({ oldName: e.target.value } as any)} style={selectStyle}>
               {columns.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
-            <span style={{ color: '#94a3b8' }}>&rarr;</span>
+            <span style={{ color: 'var(--text-secondary)' }}>&rarr;</span>
             <input 
               type="text" 
               value={(step as any).newName} 
@@ -157,7 +157,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
               {columns.map(c => (
                 <button 
                   key={c} onClick={() => insertToken(`[${c}]`)} 
-                  style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)', color: '#94a3b8', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', cursor: 'pointer' }}
+                  style={{ background: 'var(--surface)', border: '1px solid var(--surface-border)', color: 'var(--text-secondary)', padding: '0.2rem 0.5rem', borderRadius: '4px', fontSize: '0.75rem', cursor: 'pointer' }}
                 >
                   {c}
                 </button>
@@ -192,13 +192,13 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
         return (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8', width: '60px' }}>Group By</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', width: '60px' }}>Group By</span>
               <select value={(step as any).groupByColumn} onChange={e => onUpdate({ groupByColumn: e.target.value } as any)} style={selectStyle}>
                 {columns.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8', width: '60px' }}>Calculate</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', width: '60px' }}>Calculate</span>
               <select value={(step as any).operation} onChange={e => onUpdate({ operation: e.target.value } as any)} style={{ ...selectStyle, maxWidth: '100px' }}>
                 <option value="sum">Sum</option>
                 <option value="avg">Average</option>
@@ -206,7 +206,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
                 <option value="max">Max</option>
                 <option value="count">Count</option>
               </select>
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>of</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>of</span>
               <select value={(step as any).aggregationColumn} onChange={e => onUpdate({ aggregationColumn: e.target.value } as any)} style={selectStyle}>
                 {columns.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
@@ -221,7 +221,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
               {columns.map(c => <option key={c} value={c}>{c}</option>)}
             </select>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>Similarity</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Similarity</span>
               <input 
                 type="number" 
                 min="50" max="100" 
@@ -229,7 +229,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
                 onChange={e => onUpdate({ threshold: Number(e.target.value) } as any)} 
                 style={{ ...inputStyle, maxWidth: '80px' }} 
               />
-              <span style={{ fontSize: '0.75rem', color: '#94a3b8' }}>%</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>%</span>
             </div>
           </div>
         );
@@ -248,7 +248,7 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           {dragHandleProps && (
-            <div {...dragHandleProps} style={{ cursor: 'grab', display: 'flex', alignItems: 'center', color: '#94a3b8' }}>
+            <div {...dragHandleProps} style={{ cursor: 'grab', display: 'flex', alignItems: 'center', color: 'var(--text-secondary)' }}>
               <GripVertical size={16} />
             </div>
           )}

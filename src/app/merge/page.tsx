@@ -37,7 +37,7 @@ function MergeContent() {
           </div>
           <h2 className="font-serif" style={{ fontSize: '2rem', margin: 0 }}>{t('merge.title')}</h2>
         </div>
-        <p style={{ color: '#94a3b8', maxWidth: '600px' }}>
+        <p style={{ color: 'var(--text-secondary)', maxWidth: '600px' }}>
           {t('merge.subtitle')}
         </p>
       </div>
@@ -54,7 +54,7 @@ function MergeContent() {
 export default function MergePage() {
   return (
     <Suspense fallback={
-      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: '1rem', color: '#94a3b8' }}>
+      <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', gap: '1rem', color: 'var(--text-secondary)' }}>
         <Loader size={32} style={{ animation: 'spin 1s linear infinite' }} />
         <style dangerouslySetInnerHTML={{__html: `@keyframes spin{100%{transform:rotate(360deg)}}`}} />
         Loading…

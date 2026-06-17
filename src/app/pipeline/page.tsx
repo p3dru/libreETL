@@ -146,7 +146,7 @@ function PipelineContent() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('pipeline.title')}</h2>
-          <p style={{ color: '#94a3b8' }}>{t('pipeline.subtitle')} <strong>{dataset.name}</strong></p>
+          <p style={{ color: 'var(--text-secondary)' }}>{t('pipeline.subtitle')} <strong>{dataset.name}</strong></p>
         </div>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Link href={`/analyzer?id=${dataset.id}`} className="btn btn-secondary">
@@ -174,17 +174,17 @@ function PipelineContent() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)', display: 'flex', gap: '2rem' }}>
             <div>
-              <span style={{ color: '#94a3b8', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.originalRows')}</span>
+              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.originalRows')}</span>
               <span style={{ fontSize: '1.5rem', fontWeight: 600 }}>{dataset.rows.length}</span>
             </div>
             <div>
-              <span style={{ color: '#94a3b8', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.rowsAfter')}</span>
+              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.rowsAfter')}</span>
               <span style={{ fontSize: '1.5rem', fontWeight: 600, color: transformedDataset.rows.length < dataset.rows.length ? 'var(--warning)' : 'inherit' }}>
                 {transformedDataset.rows.length}
               </span>
             </div>
             <div>
-              <span style={{ color: '#94a3b8', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.columns')}</span>
+              <span style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.875rem' }}>{t('pipeline.columns')}</span>
               <span style={{ fontSize: '1.5rem', fontWeight: 600 }}>{transformedDataset.columns.length}</span>
             </div>
           </div>

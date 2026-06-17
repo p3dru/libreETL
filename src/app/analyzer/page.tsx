@@ -55,7 +55,7 @@ function AnalyzerContent() {
       <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '60vh' }}>
         <Loader size={48} className="animate-spin" style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
         <h2 style={{ fontSize: '1.5rem' }}>{t('analyzer.loading.title')}</h2>
-        <p style={{ color: '#94a3b8' }}>{t('analyzer.loading.subtitle')}</p>
+        <p style={{ color: 'var(--text-secondary)' }}>{t('analyzer.loading.subtitle')}</p>
         <style dangerouslySetInnerHTML={{__html: `
           .animate-spin { animation: spin 1s linear infinite; }
           @keyframes spin { 100% { transform: rotate(360deg); } }
@@ -71,7 +71,7 @@ function AnalyzerContent() {
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '2rem' }}>
         <div>
           <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('analyzer.title')}</h2>
-          <p style={{ color: '#94a3b8' }}>{t('analyzer.subtitle')} <strong>{dataset.name}</strong></p>
+          <p style={{ color: 'var(--text-secondary)' }}>{t('analyzer.subtitle')} <strong>{dataset.name}</strong></p>
         </div>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Link href="/upload" className="btn btn-secondary" title={t('analyzer.back')}>

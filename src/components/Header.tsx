@@ -15,7 +15,7 @@ export default function Header() {
   const { language, setLanguage, t } = useI18n();
   
   const navStyle = (path: string) => ({
-    color: pathname === path ? 'var(--foreground)' : '#94a3b8',
+    color: pathname === path ? 'var(--foreground)' : 'var(--text-secondary)',
     fontWeight: pathname === path ? 600 : 400,
     textDecoration: 'none',
     borderBottom: pathname === path ? '2px solid var(--primary)' : 'none',
@@ -84,7 +84,7 @@ export default function Header() {
             </button>
 
             {/* Theme Toggle */}
-            <button onClick={toggleTheme} suppressHydrationWarning style={{ color: '#94a3b8', display: 'flex', alignItems: 'center' }} title="Toggle Theme">
+            <button onClick={toggleTheme} suppressHydrationWarning style={{ color: 'var(--text-secondary)', display: 'flex', alignItems: 'center' }} title="Toggle Theme">
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             
@@ -93,7 +93,7 @@ export default function Header() {
               value={language}
               suppressHydrationWarning
               onChange={(e) => setLanguage(e.target.value as any)}
-              style={{ background: 'transparent', color: '#94a3b8', border: 'none', outline: 'none', cursor: 'pointer', fontSize: '0.875rem' }}
+              style={{ background: 'transparent', color: 'var(--text-secondary)', border: 'none', outline: 'none', cursor: 'pointer', fontSize: '0.875rem' }}
             >
               <option value="en">EN</option>
               <option value="pt">PT</option>

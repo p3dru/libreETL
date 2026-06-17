@@ -21,7 +21,7 @@ export default function QualityScoreCard({ report }: { report: QualityReport }) 
   return (
     <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
       <div style={{ flex: '1', minWidth: '250px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', borderRight: '1px solid var(--surface-border)', paddingRight: '2rem' }}>
-        <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#94a3b8' }}>Dataset Health Score</h3>
+        <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>Dataset Health Score</h3>
         <div style={{ position: 'relative', width: '150px', height: '150px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <svg viewBox="0 0 100 100" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', transform: 'rotate(-90deg)' }}>
             <circle cx="50" cy="50" r="45" fill="none" stroke="var(--surface-border)" strokeWidth="10" />
@@ -29,7 +29,7 @@ export default function QualityScoreCard({ report }: { report: QualityReport }) 
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span style={{ fontSize: '3rem', fontWeight: 800, lineHeight: 1 }}>{report.score}</span>
-            <span style={{ fontSize: '1rem', color: '#94a3b8' }}>/100</span>
+            <span style={{ fontSize: '1rem', color: 'var(--text-secondary)' }}>/100</span>
           </div>
         </div>
       </div>
@@ -39,7 +39,7 @@ export default function QualityScoreCard({ report }: { report: QualityReport }) 
           <ResponsiveContainer width="100%" height={200}>
             <RadarChart cx="50%" cy="50%" outerRadius="65%" data={radarData}>
               <PolarGrid stroke="rgba(255,255,255,0.1)" />
-              <PolarAngleAxis dataKey="subject" tick={{ fill: '#94a3b8', fontSize: 12 }} />
+              <PolarAngleAxis dataKey="subject" tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} />
               <PolarRadiusAxis angle={30} domain={[0, 100]} tick={false} axisLine={false} />
               <Radar name="Score" dataKey="A" stroke="var(--primary)" fill="var(--primary)" fillOpacity={0.5} />
             </RadarChart>

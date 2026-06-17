@@ -24,6 +24,9 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
@@ -50,6 +53,9 @@
   --surface: rgba(255, 255, 255, 0.7);
   --surface-border: rgba(0, 0, 0, 0.08);
   --surface-hover: rgba(0, 0, 0, 0.03);
+  
+  --text-secondary: #3f3f46;
+  --text-muted: #52525b;
   
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
@@ -237,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.75rem 1rem;
   text-align: left;
   font-weight: 600;
-  color: #94a3b8;
+  color: var(--text-secondary);
   border-bottom: 1px solid var(--surface-border);
   background: var(--surface);
   white-space: nowrap;

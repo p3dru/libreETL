@@ -27,7 +27,7 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
         if (typeof value === 'boolean') {
           return <span style={{ color: '#3b82f6', fontWeight: 500 }}>{value.toString()}</span>;
         }
-        return <span style={{ color: '#e2e8f0' }}>{String(value)}</span>;
+        return <span style={{ color: 'inherit' }}>{String(value)}</span>;
       }
     }));
   }, [dataset.columns]);
@@ -49,7 +49,7 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
       <div style={{ padding: '1.5rem', borderBottom: '1px solid var(--surface-border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
           <h3 style={{ fontSize: '1.25rem', marginBottom: '0.25rem' }}>Dataset Preview</h3>
-          <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{dataset.name} • {dataset.rows.length.toLocaleString()} rows • {dataset.columns.length} columns</p>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>{dataset.name} • {dataset.rows.length.toLocaleString()} rows • {dataset.columns.length} columns</p>
         </div>
       </div>
       
@@ -86,7 +86,7 @@ export default function DataPreviewTable({ dataset }: DataPreviewTableProps) {
       </div>
       
       <div style={{ padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid var(--surface-border)' }}>
-        <span style={{ fontSize: '0.875rem', color: '#94a3b8' }}>
+        <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount() || 1}
         </span>
         <div style={{ display: 'flex', gap: '0.5rem' }}>

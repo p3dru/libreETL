@@ -31,13 +31,13 @@ export default function BeforeAfterDashboard({ originalDataset, transformedDatas
     <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
       <div className="glass" style={{ padding: '2rem', borderRadius: 'var(--radius-lg)', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
         <div style={{ textAlign: 'center', borderRight: '1px solid var(--surface-border)' }}>
-          <h4 style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>Original Score</h4>
+          <h4 style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Original Score</h4>
           <div style={{ fontSize: '3rem', fontWeight: 800, color: originalReport.score >= 90 ? 'var(--success)' : originalReport.score >= 70 ? 'var(--warning)' : 'var(--error)' }}>
             {originalReport.score}
           </div>
         </div>
         <div style={{ textAlign: 'center' }}>
-          <h4 style={{ color: '#94a3b8', marginBottom: '0.5rem' }}>Pipeline Score</h4>
+          <h4 style={{ color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>Pipeline Score</h4>
           <div style={{ fontSize: '3rem', fontWeight: 800, color: transformedReport.score >= 90 ? 'var(--success)' : transformedReport.score >= 70 ? 'var(--warning)' : 'var(--error)' }}>
             {transformedReport.score}
           </div>
@@ -54,8 +54,8 @@ export default function BeforeAfterDashboard({ originalDataset, transformedDatas
                 margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--surface-border)" vertical={false} />
-                <XAxis dataKey="name" stroke="#94a3b8" />
-                <YAxis stroke="#94a3b8" />
+                <XAxis dataKey="name" stroke="var(--text-secondary)" />
+                <YAxis stroke="var(--text-secondary)" />
                 <Tooltip 
                   contentStyle={{ backgroundColor: 'var(--surface)', border: '1px solid var(--surface-border)', borderRadius: 'var(--radius-md)' }}
                   itemStyle={{ color: '#e2e8f0' }}

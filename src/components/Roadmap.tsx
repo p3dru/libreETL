@@ -77,7 +77,7 @@ export default function Roadmap() {
               </div>
               <h2 className="font-serif" style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t('learn.step1.title')}</h2>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step1.desc')}
             </p>
           </section>
@@ -92,7 +92,7 @@ export default function Roadmap() {
               </div>
               <h2 className="font-serif" style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t('learn.step2.title')}</h2>
             </div>
-            <p style={{ color: '#94a3b8', marginBottom: '1.5rem', lineHeight: 1.6, fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step2.desc')}
             </p>
             <div style={{ background: 'rgba(245, 158, 11, 0.1)', padding: '1.25rem', borderRadius: 'var(--radius-md)', display: 'flex', gap: '1rem', alignItems: 'flex-start', border: '1px solid rgba(245, 158, 11, 0.3)' }}>
@@ -113,7 +113,7 @@ export default function Roadmap() {
               </div>
               <h2 className="font-serif" style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t('learn.step3.title')}</h2>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step3.desc')}
             </p>
           </section>
@@ -128,7 +128,7 @@ export default function Roadmap() {
               </div>
               <h2 className="font-serif" style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t('learn.step4.title')}</h2>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step4.desc')}
             </p>
           </section>
@@ -143,7 +143,7 @@ export default function Roadmap() {
               </div>
               <h2 className="font-serif" style={{ fontSize: '1.4rem', fontWeight: 700 }}>{t('learn.step5.title')}</h2>
             </div>
-            <p style={{ color: '#94a3b8', lineHeight: 1.6, fontSize: '1rem' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, fontSize: '1rem' }}>
               {t('learn.step5.desc')}
             </p>
           </section>

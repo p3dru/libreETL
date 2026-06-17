@@ -62,7 +62,7 @@ const labelStyle: React.CSSProperties = {
   display: 'block',
   marginBottom: '0.4rem',
   fontSize: '0.8rem',
-  color: '#94a3b8',
+  color: 'var(--text-secondary)',
   fontWeight: 500,
 };
 
@@ -80,12 +80,12 @@ const StepDot = ({ n, label, currentStep }: { n: number; label: string; currentS
       justifyContent: 'center', fontSize: '0.8rem', fontWeight: 700,
       background: currentStep >= n ? 'var(--primary)' : 'var(--surface)',
       border: `2px solid ${currentStep >= n ? 'var(--primary)' : 'var(--surface-border)'}`,
-      color: currentStep >= n ? 'white' : '#94a3b8',
+      color: currentStep >= n ? 'white' : 'var(--text-secondary)',
       transition: 'all 0.3s',
     }}>
       {currentStep > n ? <CheckCircle2 size={14} /> : n}
     </div>
-    <span style={{ fontSize: '0.85rem', color: currentStep === n ? 'var(--foreground)' : '#94a3b8', fontWeight: currentStep === n ? 600 : 400 }}>
+    <span style={{ fontSize: '0.85rem', color: currentStep === n ? 'var(--foreground)' : 'var(--text-secondary)', fontWeight: currentStep === n ? 600 : 400 }}>
       {label}
     </span>
   </div>
@@ -179,7 +179,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
    * ───────────────────────────────────────────────────────────────────────── */
   if (loadingDb) {
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4rem', gap: '1rem', color: '#94a3b8' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4rem', gap: '1rem', color: 'var(--text-secondary)' }}>
         <Loader size={24} style={{ animation: 'spin 1s linear infinite' }} />
         <style dangerouslySetInnerHTML={{__html: `@keyframes spin{100%{transform:rotate(360deg)}}`}} />
         {t('merge.loading')}
@@ -192,7 +192,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
       <div className="glass" style={{ padding: '3rem 2rem', textAlign: 'center', borderRadius: 'var(--radius-lg)' }}>
         <AlertCircle size={40} style={{ color: 'var(--warning)', margin: '0 auto 1rem' }} />
         <h3 style={{ fontSize: '1.25rem', marginBottom: '0.75rem' }}>{t('merge.need2.title')}</h3>
-        <p style={{ color: '#94a3b8', marginBottom: '1.5rem' }}>{t('merge.need2.desc')}</p>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>{t('merge.need2.desc')}</p>
         <Link href="/upload" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
           {t('merge.need2.cta')}
         </Link>
@@ -233,7 +233,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
                 ))}
               </select>
               {leftDataset && (
-                <p style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '0.4rem' }}>
+                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.4rem' }}>
                   {leftDataset.columns.length} {t('merge.step1.columns')} · {leftDataset.rows.length} {t('merge.step1.rows')}
                 </p>
               )}
@@ -248,7 +248,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
                 ))}
               </select>
               {rightDataset && (
-                <p style={{ fontSize: '0.75rem', color: '#94a3b8', marginTop: '0.4rem' }}>
+                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.4rem' }}>
                   {rightDataset.columns.length} {t('merge.step1.columns')} · {rightDataset.rows.length} {t('merge.step1.rows')}
                 </p>
               )}
@@ -308,7 +308,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
                 </button>
               ))}
             </div>
-            <p style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '0.5rem' }}>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.5rem' }}>
               {t(`join.${joinType}.desc`)}
             </p>
           </div>
@@ -359,7 +359,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
               </p>
             ) : (
               <>
-                <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>
+                <p style={{ color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
                   {t('merge.step3.conflicts')} <strong>{conflictingCols.join(', ')}</strong>
                 </p>
 
@@ -423,7 +423,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
           {/* Live Preview Table */}
           {preview && (
             <div className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)' }}>
-              <h4 style={{ fontSize: '1rem', marginBottom: '1rem', color: '#94a3b8' }}>
+              <h4 style={{ fontSize: '1rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
                 {t('merge.preview.title')} <strong style={{ color: 'var(--foreground)' }}>{preview.name}</strong> ({preview.rows.length} {t('merge.preview.total')} · {preview.columns.length} {t('merge.step1.columns')})
               </h4>
               <div style={{ overflowX: 'auto' }}>
@@ -431,7 +431,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
                   <thead>
                     <tr>
                       {preview.columns.map(col => (
-                        <th key={col} style={{ padding: '0.5rem 0.75rem', textAlign: 'left', borderBottom: '1px solid var(--surface-border)', color: '#94a3b8', whiteSpace: 'nowrap' }}>
+                        <th key={col} style={{ padding: '0.5rem 0.75rem', textAlign: 'left', borderBottom: '1px solid var(--surface-border)', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
                           {col}
                         </th>
                       ))}
@@ -461,7 +461,7 @@ export default function MergeConfigurator({ onMergeComplete, initialLeftId }: Pr
           <CheckCircle2 size={56} style={{ color: '#10b981' }} />
           <div>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: '0.5rem' }}>{t('merge.step4.success')}</h3>
-            <p style={{ color: '#94a3b8' }}>{t('merge.step4.desc', { rows: preview.rows.length })}</p>
+            <p style={{ color: 'var(--text-secondary)' }}>{t('merge.step4.desc', { rows: preview.rows.length })}</p>
           </div>
 
           <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>

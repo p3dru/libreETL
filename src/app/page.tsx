@@ -24,10 +24,10 @@ export default function Home() {
       <div className="home-parallax-bg" />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
       <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto', padding: '4rem 0' }}>
-        <h1 className="font-serif" style={{ fontSize: '3.5rem', lineHeight: 1.2, marginBottom: '1.5rem', background: 'linear-gradient(to right, var(--foreground), #94a3b8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+        <h1 className="font-serif" style={{ fontSize: '3.5rem', lineHeight: 1.2, marginBottom: '1.5rem', background: 'linear-gradient(to right, var(--foreground), var(--text-secondary))', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
           {t('home.hero.title')}
         </h1>
-        <p style={{ fontSize: '1.25rem', color: '#94a3b8', marginBottom: '2rem' }}>
+        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '2rem' }}>
           {t('home.hero.subtitle')}
         </p>
 
@@ -43,7 +43,7 @@ export default function Home() {
              <div style={{ color: 'var(--primary)', marginTop: '2px', flexShrink: 0 }}><Database size={18} /></div>
              <div>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--foreground)', marginBottom: '0.25rem' }}>{t('home.feat.upload.title')}</h4>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: 0, lineHeight: 1.5 }}>{t('home.feat.upload.desc')}</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{t('home.feat.upload.desc')}</p>
              </div>
           </div>
           
@@ -51,7 +51,7 @@ export default function Home() {
              <div style={{ color: 'var(--success)', marginTop: '2px', flexShrink: 0 }}><ShieldCheck size={18} /></div>
              <div>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--foreground)', marginBottom: '0.25rem' }}>{t('home.feat.quality.title')}</h4>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: 0, lineHeight: 1.5 }}>{t('home.feat.quality.desc')}</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{t('home.feat.quality.desc')}</p>
              </div>
           </div>
 
@@ -59,7 +59,7 @@ export default function Home() {
              <div style={{ color: 'var(--warning)', marginTop: '2px', flexShrink: 0 }}><Zap size={18} /></div>
              <div>
                 <h4 style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--foreground)', marginBottom: '0.25rem' }}>{t('home.feat.pipeline.title')}</h4>
-                <p style={{ fontSize: '0.9rem', color: '#94a3b8', margin: 0, lineHeight: 1.5 }}>{t('home.feat.pipeline.desc')}</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{t('home.feat.pipeline.desc')}</p>
              </div>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Home() {
             {recentDatasets.map(dataset => (
               <div key={dataset.id} className="glass" style={{ padding: '1.5rem', borderRadius: 'var(--radius-lg)' }}>
                 <h3 style={{ fontSize: '1.125rem', fontWeight: 600, wordBreak: 'break-all', marginBottom: '0.5rem' }}>{dataset.name}</h3>
-                <div style={{ color: '#94a3b8', fontSize: '0.875rem', marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.875rem', marginBottom: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}><Table size={14} /> {dataset.rows.length} {t('home.recent.rows')}</span>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>

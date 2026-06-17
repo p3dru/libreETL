@@ -35,7 +35,7 @@ export default function UploadPage() {
     <div className="container">
       <div style={{ paddingBottom: '2rem' }}>
         <h2 className="font-serif" style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>{t('upload.title')}</h2>
-        <p style={{ color: '#94a3b8' }}>{t('upload.subtitle')}</p>
+        <p style={{ color: 'var(--text-secondary)' }}>{t('upload.subtitle')}</p>
       </div>
 
       {!dataset ? (
