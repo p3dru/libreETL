@@ -244,11 +244,7 @@ export default function LearnWikiPage() {
             <ParamRow name={t('learn.param.csv')} type={t('learn.param.default')} desc={t('learn.export.csv')} />
             <ParamRow name={t('learn.param.xlsx')} type={t('learn.param.available')} desc={t('learn.export.xlsx')} />
           </div>
-          <div style={{ marginTop: '3rem', textAlign: 'center' as const }}>
-            <a href="/upload" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 2.5rem', fontSize: '1rem', borderRadius: 'var(--radius-full)' }}>
-              {t('learn.cta')} <ChevronRight size={18} />
-            </a>
-          </div>
+
         </section>
 
 
