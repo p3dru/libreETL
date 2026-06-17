@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { BookOpen, UploadCloud, Activity, Layout, GitMerge, Download, ShieldAlert, Zap, Save, ChevronRight, AlertCircle } from 'lucide-react';
 import { useI18n } from '@/core/i18n/I18nContext';
+import Link from 'next/link';
 
 const Code = ({ children }: { children: React.ReactNode }) => (
   <code style={{
@@ -257,6 +258,37 @@ export default function LearnWikiPage() {
           <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.wipecache.intro')}</p>
           <InfoBox title={t('learn.wipecache.title')} color="var(--error)">{t('learn.wipecache.desc')}</InfoBox>
         </section>
+
+        {/* CTA */}
+        <div style={{ marginTop: '5rem', marginBottom: '3rem', display: 'flex', justifyContent: 'center' }}>
+          <Link href="/" style={{
+            background: 'var(--primary)',
+            color: 'white',
+            padding: '1rem 2.5rem',
+            borderRadius: 'var(--radius-full)',
+            fontWeight: 600,
+            fontSize: '1.1rem',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.75rem',
+            transition: 'all 0.2s',
+            boxShadow: 'var(--shadow-md)'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
+            e.currentTarget.style.background = 'var(--primary-hover)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = 'var(--shadow-md)';
+            e.currentTarget.style.background = 'var(--primary)';
+          }}
+          >
+            {t('learn.cta')} <ChevronRight size={20} />
+          </Link>
+        </div>
       </main>
 
     </div>

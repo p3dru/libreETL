@@ -1,0 +1,122 @@
+import re
+
+with open('src/core/i18n/I18nContext.tsx', 'r') as f:
+    content = f.read()
+
+# English additions
+en_add = """    'learn.transform.filter.use': 'Keep only records from a specific period, category, or exclude extreme outliers.',
+    'learn.transform.removecol.name': 'Remove Column',
+    'learn.transform.removecol.param': 'column: string',
+    'learn.transform.removecol.desc': 'Completely drops a column from the dataset.',
+    'learn.transform.removecol.use': 'Remove PII (Personally Identifiable Information) or irrelevant data to save memory.',
+    'learn.transform.converttype.name': 'Convert Type',
+    'learn.transform.converttype.param': 'column: string, targetType: string',
+    'learn.transform.converttype.desc': 'Casts a column to a specific data type (string, number, boolean).',
+    'learn.transform.converttype.use': 'Fix numbers imported as text before performing mathematical operations.',
+    'learn.transform.sort.name': 'Sort Data',
+    'learn.transform.sort.param': 'column: string, direction: asc | desc',
+    'learn.transform.sort.desc': 'Sorts all rows based on the values of a single column.',
+    'learn.transform.sort.use': 'Organize data chronologically or by top values.',
+    'learn.transform.calc.name': 'Calculated Column',
+    'learn.transform.calc.param': 'newColumnName: string, expression: string',
+    'learn.transform.calc.desc': 'Creates a new column based on a mathematical expression using existing columns.',
+    'learn.transform.calc.use': 'Calculate totals, taxes, or convert units without leaving the app.',
+    'learn.transform.mask.name': 'Mask Data',
+    'learn.transform.mask.param': 'column: string, maskType: string',
+    'learn.transform.mask.desc': 'Obfuscates sensitive data with asterisks or hashes.',
+    'learn.transform.mask.use': 'Anonymize passwords, emails, or credit card numbers before exporting.',
+    'learn.transform.groupby.name': 'Group By',
+    'learn.transform.groupby.param': 'groupByColumn: string, operation: string',
+    'learn.transform.groupby.desc': 'Aggregates data by a category, summarizing another column using sum, average, min, or max.',
+    'learn.transform.groupby.use': 'Generate reports like "Total Sales per Month".',
+    'learn.transform.fuzzy.name': 'Fuzzy Deduplicate',
+    'learn.transform.fuzzy.param': 'column: string, threshold: number',
+    'learn.transform.fuzzy.desc': 'Removes rows that have very similar, but not identical, text in a column based on a percentage threshold.',
+    'learn.transform.fuzzy.use': 'Merge "Jonh Doe" and "John Doe" entries that are typos.',
+    'learn.nav.wipecache': 'Wipe Cache',
+    'learn.wipecache.title': 'Wipe Cache',
+    'learn.wipecache.intro': 'The "Wipe Cache" button securely and permanently destroys all datasets and settings saved in your browser.',
+    'learn.wipecache.desc': 'Use this feature when you are done working with sensitive data and want to ensure it cannot be recovered by anyone else using your machine. It deletes the underlying IndexedDB database entirely.',
+"""
+
+content = content.replace("    'learn.transform.filter.use': 'Keep only records from a specific period, category, or exclude extreme outliers.',\n", en_add)
+
+pt_add = """    'learn.transform.filter.use': 'Manter só os registros de um período, categoria ou excluir outliers extremos.',
+    'learn.transform.removecol.name': 'Remove Column',
+    'learn.transform.removecol.param': 'coluna: string',
+    'learn.transform.removecol.desc': 'Exclui completamente uma coluna do dataset.',
+    'learn.transform.removecol.use': 'Remover dados pessoais sensíveis ou colunas irrelevantes para economizar memória.',
+    'learn.transform.converttype.name': 'Convert Type',
+    'learn.transform.converttype.param': 'coluna: string, tipo: string',
+    'learn.transform.converttype.desc': 'Converte uma coluna para um tipo específico de dado (texto, número, booleano).',
+    'learn.transform.converttype.use': 'Consertar números importados como texto antes de realizar operações matemáticas.',
+    'learn.transform.sort.name': 'Sort Data',
+    'learn.transform.sort.param': 'coluna: string, direcao: asc | desc',
+    'learn.transform.sort.desc': 'Ordena todas as linhas com base nos valores de uma única coluna.',
+    'learn.transform.sort.use': 'Organizar os dados cronologicamente ou por maiores valores.',
+    'learn.transform.calc.name': 'Calculated Column',
+    'learn.transform.calc.param': 'novaColuna: string, expressao: string',
+    'learn.transform.calc.desc': 'Cria uma nova coluna a partir de uma expressão matemática envolvendo as outras colunas.',
+    'learn.transform.calc.use': 'Calcular totais, impostos, ou converter unidades direto no aplicativo.',
+    'learn.transform.mask.name': 'Mask Data',
+    'learn.transform.mask.param': 'coluna: string, tipoMascara: string',
+    'learn.transform.mask.desc': 'Ofusca dados sensíveis com asteriscos ou hash criptográfico.',
+    'learn.transform.mask.use': 'Anonimizar senhas, emails ou cartões de crédito antes de exportar.',
+    'learn.transform.groupby.name': 'Group By',
+    'learn.transform.groupby.param': 'colunaAgrupamento: string, operacao: string',
+    'learn.transform.groupby.desc': 'Agrega dados por uma categoria, resumindo outra coluna com soma, média, mínimo ou máximo.',
+    'learn.transform.groupby.use': 'Gerar relatórios sumarizados como "Total de Vendas por Mês".',
+    'learn.transform.fuzzy.name': 'Fuzzy Deduplicate',
+    'learn.transform.fuzzy.param': 'coluna: string, limiteSimilaridade: number',
+    'learn.transform.fuzzy.desc': 'Remove linhas que possuem texto muito similar (mas não idêntico) baseando-se num limite de porcentagem.',
+    'learn.transform.fuzzy.use': 'Fundir registros com erros de digitação como "Jonh Doe" e "John Doe".',
+    'learn.nav.wipecache': 'Limpar Cache',
+    'learn.wipecache.title': 'Limpar Cache',
+    'learn.wipecache.intro': 'O botão "Limpar Cache" destrói de forma segura e permanente todos os datasets e configurações salvos no seu navegador.',
+    'learn.wipecache.desc': 'Use essa função quando terminar de processar dados sensíveis para garantir que nada possa ser recuperado por outra pessoa no seu computador. Ele deleta toda a base IndexedDB.',
+"""
+
+content = content.replace("    'learn.transform.filter.use': 'Manter só os registros de um período, categoria ou excluir outliers extremos.',\n", pt_add)
+
+es_add = """    'learn.transform.filter.use': 'Mantener solo registros de un período, categoría o excluir valores extremos.',
+    'learn.transform.removecol.name': 'Remove Column',
+    'learn.transform.removecol.param': 'columna: string',
+    'learn.transform.removecol.desc': 'Elimina completamente una columna del dataset.',
+    'learn.transform.removecol.use': 'Eliminar información personal (PII) o datos irrelevantes para ahorrar memoria.',
+    'learn.transform.converttype.name': 'Convert Type',
+    'learn.transform.converttype.param': 'columna: string, tipo: string',
+    'learn.transform.converttype.desc': 'Convierte una columna a un tipo de dato específico (texto, número, booleano).',
+    'learn.transform.converttype.use': 'Arreglar números importados como texto antes de realizar operaciones matemáticas.',
+    'learn.transform.sort.name': 'Sort Data',
+    'learn.transform.sort.param': 'columna: string, direccion: asc | desc',
+    'learn.transform.sort.desc': 'Ordena todas las filas basándose en los valores de una única columna.',
+    'learn.transform.sort.use': 'Organizar los datos cronológicamente o por los valores más altos.',
+    'learn.transform.calc.name': 'Calculated Column',
+    'learn.transform.calc.param': 'nuevaColumna: string, expresion: string',
+    'learn.transform.calc.desc': 'Crea una nueva columna basada en una expresión matemática utilizando las columnas existentes.',
+    'learn.transform.calc.use': 'Calcular totales, impuestos o convertir unidades sin salir de la aplicación.',
+    'learn.transform.mask.name': 'Mask Data',
+    'learn.transform.mask.param': 'columna: string, tipoMascara: string',
+    'learn.transform.mask.desc': 'Ofusca datos confidenciales con asteriscos o hashes.',
+    'learn.transform.mask.use': 'Anonimizar contraseñas, correos electrónicos o números de tarjeta de crédito antes de exportar.',
+    'learn.transform.groupby.name': 'Group By',
+    'learn.transform.groupby.param': 'columnaAgrupacion: string, operacion: string',
+    'learn.transform.groupby.desc': 'Agrega datos por una categoría, resumiendo otra columna con suma, promedio, mínimo o máximo.',
+    'learn.transform.groupby.use': 'Generar informes resumidos como "Ventas Totales por Mes".',
+    'learn.transform.fuzzy.name': 'Fuzzy Deduplicate',
+    'learn.transform.fuzzy.param': 'columna: string, limiteSimilitud: number',
+    'learn.transform.fuzzy.desc': 'Elimina las filas que tienen un texto muy similar (pero no idéntico) basándose en un límite de porcentaje.',
+    'learn.transform.fuzzy.use': 'Fusionar registros con errores tipográficos como "Jonh Doe" y "John Doe".',
+    'learn.nav.wipecache': 'Borrar Caché',
+    'learn.wipecache.title': 'Borrar Caché',
+    'learn.wipecache.intro': 'El botón "Borrar Caché" destruye de forma segura y permanente todos los conjuntos de datos y configuraciones guardados en su navegador.',
+    'learn.wipecache.desc': 'Utilice esta función cuando haya terminado de trabajar con datos confidenciales para garantizar que nadie más que use su máquina pueda recuperarlos. Elimina por completo la base de datos IndexedDB.',
+"""
+
+content = content.replace("    'learn.transform.filter.use': 'Mantener solo registros de un período, categoría o excluir valores extremos.',\n", es_add)
+
+# Also adding these to the navbar in learn/page.tsx just in case
+with open('src/core/i18n/I18nContext.tsx', 'w') as f:
+    f.write(content)
+
+print("Patched I18nContext.tsx")
