@@ -237,7 +237,7 @@ export default function LearnWikiPage() {
         </section>
 
         {/* EXPORT */}
-        <section id="export" style={{ scrollMarginTop: '110px' }}>
+        <section id="export" style={{ marginBottom: '5rem', scrollMarginTop: '110px' }}>
           <Heading2 icon={<Download size={22} />}>{t('learn.export.title')}</Heading2>
           <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.export.intro')}</p>
           <div style={{ display: 'flex', flexDirection: 'column' as const }}>
