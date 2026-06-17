@@ -267,9 +267,9 @@ export default function TransformationBlock({ step, columns, onUpdate, onRemove,
 }
 
 const selectStyle = {
-  background: 'rgba(255,255,255,0.05)',
+  background: 'var(--surface-hover)',
   border: '1px solid var(--surface-border)',
-  color: 'white',
+  color: 'inherit',
   padding: '0.5rem',
   borderRadius: '4px',
   fontSize: '0.875rem',

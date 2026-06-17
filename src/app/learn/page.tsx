@@ -65,6 +65,7 @@ export default function LearnWikiPage() {
     { id: 'merge', label: t('learn.nav.merge') },
     { id: 'history', label: t('learn.nav.history') },
     { id: 'export', label: t('learn.nav.export') },
+    { id: 'wipecache', label: t('learn.nav.wipecache') },
   ];
 
   useEffect(() => {
@@ -95,6 +96,8 @@ export default function LearnWikiPage() {
   const transforms = [
     { key: 'dropnulls' }, { key: 'fillnulls' }, { key: 'dropdupes' },
     { key: 'case' }, { key: 'trim' }, { key: 'rename' }, { key: 'filter' },
+    { key: 'removecol' }, { key: 'converttype' }, { key: 'sort' },
+    { key: 'calc' }, { key: 'mask' }, { key: 'groupby' }, { key: 'fuzzy' }
   ];
 
   return (
@@ -247,7 +250,15 @@ export default function LearnWikiPage() {
           </div>
         </section>
 
+
+        {/* WIPE CACHE */}
+        <section id="wipecache" style={{ scrollMarginTop: '110px' }}>
+          <Heading2 icon={<AlertCircle size={22} />} color="var(--error)">{t('learn.wipecache.title')}</Heading2>
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.75, marginBottom: '1.5rem' }}>{t('learn.wipecache.intro')}</p>
+          <InfoBox title={t('learn.wipecache.title')} color="var(--error)">{t('learn.wipecache.desc')}</InfoBox>
+        </section>
       </main>
+
     </div>
   );
 }
