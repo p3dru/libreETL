@@ -6,6 +6,8 @@
  * ─────────────────────────────────────────────────────────────────────────────
  */
 
+import { tGlobal } from '@/core/i18n/I18nContext';
+
 /* ── Injeta os keyframes de animação uma única vez ──────────────────────────── */
 function injectAnimations() {
   if (document.getElementById('libreetl-dialog-styles')) return;
@@ -322,11 +324,11 @@ export const customAlert = (
   options: AlertOptions = {}
 ): Promise<void> => {
   const {
-    title = 'Aviso',
+    title = tGlobal('dialog.alert.title'),
     subtitle,
     variant = 'default',
     icon,
-    okLabel = 'OK',
+    okLabel = tGlobal('dialog.ok'),
   } = options;
 
   return new Promise(resolve => {
@@ -373,12 +375,12 @@ export const customConfirm = (
   options: ConfirmOptions = {}
 ): Promise<boolean> => {
   const {
-    title = isDanger ? 'Confirmar ação' : 'Confirmar',
-    subtitle = isDanger ? 'Esta ação não pode ser desfeita' : undefined,
+    title = isDanger ? tGlobal('dialog.confirm.danger.title') : tGlobal('dialog.confirm.title'),
+    subtitle = isDanger ? tGlobal('dialog.confirm.danger.subtitle') : undefined,
     variant = isDanger ? 'danger' : 'default',
     icon,
-    okLabel = isDanger ? 'Confirmar' : 'OK',
-    cancelLabel = 'Cancelar',
+    okLabel = isDanger ? tGlobal('dialog.confirm.btn') : tGlobal('dialog.ok'),
+    cancelLabel = tGlobal('dialog.cancel'),
   } = options;
 
   return new Promise(resolve => {
@@ -425,12 +427,12 @@ export const customPrompt = (
   options: PromptOptions = {}
 ): Promise<string | null> => {
   const {
-    title = 'Entrada de dados',
+    title = tGlobal('dialog.prompt.title'),
     subtitle,
     variant = 'default',
     icon,
-    okLabel = 'Confirmar',
-    cancelLabel = 'Cancelar',
+    okLabel = tGlobal('dialog.confirm.btn'),
+    cancelLabel = tGlobal('dialog.cancel'),
   } = options;
 
   return new Promise(resolve => {
@@ -485,7 +487,7 @@ export const customChoice = (
   dialogOptions: ChoiceOptions = {}
 ): Promise<string | null> => {
   const {
-    title = 'Escolha uma opção',
+    title = tGlobal('dialog.choice.title'),
     subtitle,
     variant = 'default',
     icon,

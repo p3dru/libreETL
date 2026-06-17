@@ -58,6 +58,17 @@ const translations: Record<Language, Record<string, string>> = {
     'upload.analyze': 'Run Quality Analysis',
     'upload.saving': 'Saving...',
 
+    // DIALOGS
+    'dialog.alert.title': 'Warning',
+    'dialog.ok': 'OK',
+    'dialog.confirm.title': 'Confirm',
+    'dialog.confirm.danger.title': 'Confirm Action',
+    'dialog.confirm.danger.subtitle': 'This action cannot be undone',
+    'dialog.confirm.btn': 'Confirm',
+    'dialog.cancel': 'Cancel',
+    'dialog.prompt.title': 'Input required',
+    'dialog.choice.title': 'Choose an option',
+
     // HISTORY
     'history.title': 'Your Datasets',
     'history.subtitle': 'Resume your previous sessions securely stored in your browser.',
@@ -371,6 +382,17 @@ const translations: Record<Language, Record<string, string>> = {
     'upload.another': 'Enviar outro arquivo',
     'upload.analyze': 'Executar Análise de Qualidade',
     'upload.saving': 'Salvando...',
+
+    // DIALOGS
+    'dialog.alert.title': 'Aviso',
+    'dialog.ok': 'OK',
+    'dialog.confirm.title': 'Confirmar',
+    'dialog.confirm.danger.title': 'Confirmar ação',
+    'dialog.confirm.danger.subtitle': 'Esta ação não pode ser desfeita',
+    'dialog.confirm.btn': 'Confirmar',
+    'dialog.cancel': 'Cancelar',
+    'dialog.prompt.title': 'Entrada de dados',
+    'dialog.choice.title': 'Escolha uma opção',
 
     // HISTORY
     'history.title': 'Seus Datasets',
@@ -686,6 +708,17 @@ const translations: Record<Language, Record<string, string>> = {
     'upload.analyze': 'Ejecutar Análisis de Calidad',
     'upload.saving': 'Guardando...',
 
+    // DIALOGS
+    'dialog.alert.title': 'Aviso',
+    'dialog.ok': 'OK',
+    'dialog.confirm.title': 'Confirmar',
+    'dialog.confirm.danger.title': 'Confirmar acción',
+    'dialog.confirm.danger.subtitle': 'Esta acción no se puede deshacer',
+    'dialog.confirm.btn': 'Confirmar',
+    'dialog.cancel': 'Cancelar',
+    'dialog.prompt.title': 'Entrada de datos',
+    'dialog.choice.title': 'Elija una opción',
+
     // HISTORY
     'history.title': 'Sus Conjuntos de Datos',
     'history.subtitle': 'Retome sus sesiones anteriores almacenadas de forma segura en su navegador.',
@@ -998,4 +1031,20 @@ export const useI18n = () => {
   const context = useContext(I18nContext);
   if (!context) throw new Error('useI18n must be used within I18nProvider');
   return context;
+};
+
+export const tGlobal = (key: string, vars?: Record<string, string | number>): string => {
+  if (typeof window === 'undefined') return key;
+  let lang = localStorage.getItem('libreetl_lang') as Language;
+  if (!lang || !translations[lang]) {
+    const browserLang = navigator.language.split('-')[0];
+    lang = ['en', 'pt', 'es'].includes(browserLang) ? (browserLang as Language) : 'en';
+  }
+  let str = translations[lang]?.[key] ?? translations['en']?.[key] ?? key;
+  if (vars) {
+    Object.entries(vars).forEach(([k, v]) => {
+      str = str.replace(`{${k}}`, String(v));
+    });
+  }
+  return str;
 };
