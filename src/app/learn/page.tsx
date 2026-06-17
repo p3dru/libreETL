@@ -98,7 +98,7 @@ export default function LearnWikiPage() {
       <aside className="glass" style={{ width: '260px', position: 'sticky', top: '90px', padding: '1.5rem', borderRadius: 'var(--radius-lg)', flexShrink: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', paddingBottom: '1rem', borderBottom: '1px solid var(--surface-border)' }}>
           <BookOpen size={18} style={{ color: 'var(--primary)' }} />
-          <span className="font-serif" style={{ fontWeight: 700, fontSize: '1.05rem' }}>DataQ Docs</span>
+          <span className="font-serif" style={{ fontWeight: 700, fontSize: '1.05rem' }}>LibreETL Docs</span>
         </div>
         <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem' }}>
           {sections.map(s => (

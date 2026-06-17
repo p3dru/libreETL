@@ -16,7 +16,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem('dataq_theme') as Theme;
+    const saved = localStorage.getItem('libreetl_theme') as Theme;
     if (saved === 'light' || saved === 'dark') {
       setTheme(saved);
       if (saved === 'light') {
@@ -29,7 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
-    localStorage.setItem('dataq_theme', newTheme);
+    localStorage.setItem('libreetl_theme', newTheme);
     
     if (newTheme === 'light') {
       document.documentElement.classList.add('light-theme');

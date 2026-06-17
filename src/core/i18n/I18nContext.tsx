@@ -85,12 +85,12 @@ const translations: Record<Language, Record<string, string>> = {
     'pipeline.choice.merge': 'Go to Merge ⋈',
 
     // LEARN WIKI
-    'learn.page.title': 'DataQ Documentation',
-    'learn.page.subtitle': 'DataQ is a dataset diagnostics and cleaning tool that runs entirely in the browser — no backend, no server, no installation.',
-    'learn.page.subtitle2': 'The idea came from a real pain: you receive a spreadsheet full of nulls, text where there should be numbers, duplicates. Before you can use that data in any analysis, you spend hours fixing it manually. DataQ automates most of that process without requiring you to know how to code.',
+    'learn.page.title': 'LibreETL Documentation',
+    'learn.page.subtitle': 'LibreETL is a dataset diagnostics and cleaning tool that runs entirely in the browser — no backend, no server, no installation.',
+    'learn.page.subtitle2': 'The idea came from a real pain: you receive a spreadsheet full of nulls, text where there should be numbers, duplicates. Before you can use that data in any analysis, you spend hours fixing it manually. LibreETL automates most of that process without requiring you to know how to code.',
     'learn.privacy.title': 'Your data never leaves your computer',
-    'learn.privacy.desc': 'Everything is processed locally via IndexedDB and native browser APIs. DataQ has no server. There is no address where your data is sent — not even for telemetry.',
-    'learn.when.title': 'When to use DataQ?',
+    'learn.privacy.desc': 'Everything is processed locally via IndexedDB and native browser APIs. LibreETL has no server. There is no address where your data is sent — not even for telemetry.',
+    'learn.when.title': 'When to use LibreETL?',
     'learn.when.desc': 'When you have CSV or Excel files with known problems (nulls, duplicates, inconsistent formatting) and want to fix them before importing into another tool, database or analysis. It\'s not a replacement for Python/R in complex production pipelines, but works great for quick and recurring cleanups.',
     'learn.upload.title': 'Upload & Storage',
     'learn.upload.intro': 'The first step is always bringing your file into the system. The Upload screen accepts two formats and has a progress bar showing real-time parsing.',
@@ -104,7 +104,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.upload.tip.title': 'Best practices when uploading',
     'learn.upload.tip.desc': 'Give the file a descriptive name before uploading. Once in the system, the name is the only visual identifier. Avoid spaces and special characters in the filename.',
     'learn.diag.title': 'Diagnostics Engine',
-    'learn.diag.intro': 'When you open a dataset, DataQ runs an automatic scan on all columns. The result appears in the Analyzer screen with a metrics panel and an overall score from 0 to 100.',
+    'learn.diag.intro': 'When you open a dataset, LibreETL runs an automatic scan on all columns. The result appears in the Analyzer screen with a metrics panel and an overall score from 0 to 100.',
     'learn.diag.score.title': 'Quality Score',
     'learn.diag.score.desc': 'The score is a single number summarizing dataset health. It starts at 100 and loses points based on three factors:',
     'learn.diag.nulls': 'Empty cells in a column that should have data. A column with 40% nulls indicates a serious problem at the data source.',
@@ -171,7 +171,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.export.csv': 'Exports with comma as delimiter and UTF-8 BOM at the start, ensuring special characters (ç, ã, é) appear correctly when opened in Excel.',
     'learn.export.xlsx': 'Exports a formatted Excel spreadsheet, with the first row containing bold headers.',
     'learn.cta': 'Get Started',
-    'learn.nav.intro': 'What is DataQ?',
+    'learn.nav.intro': 'What is LibreETL?',
     'learn.nav.upload': 'Upload & Storage',
     'learn.nav.diagnostics': 'Diagnostics Engine',
     'learn.nav.pipeline': 'Visual Pipeline (ETL)',
@@ -385,12 +385,12 @@ const translations: Record<Language, Record<string, string>> = {
     'pipeline.choice.merge': 'Ir para Mesclar ⋈',
 
     // LEARN WIKI
-    'learn.page.title': 'DataQ — Documentação',
-    'learn.page.subtitle': 'O DataQ é uma ferramenta de diagnóstico e limpeza de dados que roda direto no navegador — sem backend, sem servidor, sem instalação.',
-    'learn.page.subtitle2': 'A ideia veio de uma dor real: você recebe uma planilha cheia de nulos, texto onde deveria ter número, duplicatas. Antes de conseguir usar esses dados em qualquer análise, passa horas ajustando manualmente. O DataQ automatiza boa parte desse processo sem exigir que você saiba programar.',
+    'learn.page.title': 'LibreETL — Documentação',
+    'learn.page.subtitle': 'O LibreETL é uma ferramenta de diagnóstico e limpeza de dados que roda direto no navegador — sem backend, sem servidor, sem instalação.',
+    'learn.page.subtitle2': 'A ideia veio de uma dor real: você recebe uma planilha cheia de nulos, texto onde deveria ter número, duplicatas. Antes de conseguir usar esses dados em qualquer análise, passa horas ajustando manualmente. O LibreETL automatiza boa parte desse processo sem exigir que você saiba programar.',
     'learn.privacy.title': 'Seus dados não saem do computador',
-    'learn.privacy.desc': 'Tudo é processado localmente via IndexedDB e APIs nativas do browser. O DataQ não tem servidor. Não há nenhum endereço para onde seus dados sejam enviados — nem mesmo para telemetria.',
-    'learn.when.title': 'Quando usar o DataQ?',
+    'learn.privacy.desc': 'Tudo é processado localmente via IndexedDB e APIs nativas do browser. O LibreETL não tem servidor. Não há nenhum endereço para onde seus dados sejam enviados — nem mesmo para telemetria.',
+    'learn.when.title': 'Quando usar o LibreETL?',
     'learn.when.desc': 'Quando você tem arquivos CSV ou Excel com problemas conhecidos (nulos, duplicatas, formatação inconsistente) e quer resolver isso antes de importar em outra ferramenta, banco de dados ou análise. Não é um substituto para Python/R em pipelines complexos de produção, mas serve muito bem para limpezas rápidas e recorrentes.',
     'learn.upload.title': 'Upload & Armazenamento',
     'learn.upload.intro': 'O primeiro passo é sempre trazer seu arquivo para dentro do sistema. A tela de Upload aceita dois formatos e tem uma barra de progresso que mostra em tempo real o parsing do arquivo.',
@@ -404,7 +404,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.upload.tip.title': 'Boas práticas ao enviar',
     'learn.upload.tip.desc': 'Dê um nome descritivo ao arquivo antes de enviar. Depois que está no sistema, o nome é o único identificador visual. Evite espaços e caracteres especiais no nome do arquivo.',
     'learn.diag.title': 'Motor de Diagnóstico',
-    'learn.diag.intro': 'Quando você abre um dataset, o DataQ roda um scan automático em todas as colunas. O resultado aparece na tela do Analisador com um painel lateral de métricas e um score geral de 0 a 100.',
+    'learn.diag.intro': 'Quando você abre um dataset, o LibreETL roda um scan automático em todas as colunas. O resultado aparece na tela do Analisador com um painel lateral de métricas e um score geral de 0 a 100.',
     'learn.diag.score.title': 'Score de Qualidade',
     'learn.diag.score.desc': 'O score é um número único que resume a saúde do dataset. Ele começa em 100 e perde pontos baseado em três fatores:',
     'learn.diag.nulls': 'Células vazias numa coluna que deveria ter dados. Uma coluna com 40% de nulos indica problema sério na fonte dos dados.',
@@ -471,7 +471,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.export.csv': 'Exporta com vírgula como delimitador e BOM UTF-8 no início, garantindo que caracteres especiais (ç, ã, é) apareçam corretamente ao abrir no Excel.',
     'learn.export.xlsx': 'Exporta uma planilha Excel formatada, com a primeira linha contendo os headers em negrito.',
     'learn.cta': 'Começar Agora',
-    'learn.nav.intro': 'O que é o DataQ?',
+    'learn.nav.intro': 'O que é o LibreETL?',
     'learn.nav.upload': 'Upload & Armazenamento',
     'learn.nav.diagnostics': 'Motor de Diagnóstico',
     'learn.nav.pipeline': 'Pipeline Visual (ETL)',
@@ -685,12 +685,12 @@ const translations: Record<Language, Record<string, string>> = {
     'pipeline.choice.merge': 'Ir a Combinar ⋈',
 
     // LEARN WIKI
-    'learn.page.title': 'DataQ — Documentación',
-    'learn.page.subtitle': 'DataQ es una herramienta de diagnóstico y limpieza de datos que corre directamente en el navegador — sin backend, sin servidor, sin instalación.',
-    'learn.page.subtitle2': 'La idea surgió de un problema real: recibe una hoja de cálculo llena de nulos, texto donde debería haber números, duplicados. Antes de poder usar esos datos en cualquier análisis, pasa horas corrigiéndolos manualmente. DataQ automatiza gran parte de ese proceso sin requerir conocimientos de programación.',
+    'learn.page.title': 'LibreETL — Documentación',
+    'learn.page.subtitle': 'LibreETL es una herramienta de diagnóstico y limpieza de datos que corre directamente en el navegador — sin backend, sin servidor, sin instalación.',
+    'learn.page.subtitle2': 'La idea surgió de un problema real: recibe una hoja de cálculo llena de nulos, texto donde debería haber números, duplicados. Antes de poder usar esos datos en cualquier análisis, pasa horas corrigiéndolos manualmente. LibreETL automatiza gran parte de ese proceso sin requerir conocimientos de programación.',
     'learn.privacy.title': 'Sus datos no salen de su computadora',
-    'learn.privacy.desc': 'Todo se procesa localmente mediante IndexedDB y APIs nativas del navegador. DataQ no tiene servidor. No hay ninguna dirección a la que se envíen sus datos, ni siquiera para telemetría.',
-    'learn.when.title': '¿Cuándo usar DataQ?',
+    'learn.privacy.desc': 'Todo se procesa localmente mediante IndexedDB y APIs nativas del navegador. LibreETL no tiene servidor. No hay ninguna dirección a la que se envíen sus datos, ni siquiera para telemetría.',
+    'learn.when.title': '¿Cuándo usar LibreETL?',
     'learn.when.desc': 'Cuando tiene archivos CSV o Excel con problemas conocidos (nulos, duplicados, formato inconsistente) y quiere resolverlos antes de importarlos en otra herramienta, base de datos o análisis.',
     'learn.upload.title': 'Carga & Almacenamiento',
     'learn.upload.intro': 'El primer paso es siempre traer su archivo al sistema. La pantalla de carga acepta dos formatos y tiene una barra de progreso que muestra el análisis en tiempo real.',
@@ -704,7 +704,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.upload.tip.title': 'Buenas prácticas al cargar',
     'learn.upload.tip.desc': 'Dé al archivo un nombre descriptivo antes de cargarlo. Evite espacios y caracteres especiales en el nombre del archivo.',
     'learn.diag.title': 'Motor de Diagnóstico',
-    'learn.diag.intro': 'Cuando abre un dataset, DataQ ejecuta un escaneo automático en todas las columnas. El resultado aparece en la pantalla del Analizador con un panel de métricas y una puntuación general de 0 a 100.',
+    'learn.diag.intro': 'Cuando abre un dataset, LibreETL ejecuta un escaneo automático en todas las columnas. El resultado aparece en la pantalla del Analizador con un panel de métricas y una puntuación general de 0 a 100.',
     'learn.diag.score.title': 'Puntuación de Calidad',
     'learn.diag.score.desc': 'La puntuación es un número único que resume la salud del dataset. Comienza en 100 y pierde puntos por tres factores:',
     'learn.diag.nulls': 'Celdas vacías en una columna que debería tener datos. Una columna con 40% de nulos indica un problema grave en la fuente de datos.',
@@ -771,7 +771,7 @@ const translations: Record<Language, Record<string, string>> = {
     'learn.export.csv': 'Exporta con coma como delimitador y BOM UTF-8 al inicio, garantizando que los caracteres especiales aparezcan correctamente en Excel.',
     'learn.export.xlsx': 'Exporta una hoja de cálculo Excel formateada, con la primera fila conteniendo los encabezados en negrita.',
     'learn.cta': 'Empezar Ahora',
-    'learn.nav.intro': '¿Qué es DataQ?',
+    'learn.nav.intro': '¿Qué es LibreETL?',
     'learn.nav.upload': 'Carga & Almacenamiento',
     'learn.nav.diagnostics': 'Motor de Diagnóstico',
     'learn.nav.pipeline': 'Pipeline Visual (ETL)',
@@ -919,7 +919,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
 
   useEffect(() => {
-    const saved = localStorage.getItem('dataq_lang') as Language;
+    const saved = localStorage.getItem('libreetl_lang') as Language;
     if (saved && translations[saved]) {
       setLanguageState(saved);
     } else {
@@ -932,7 +932,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
-    localStorage.setItem('dataq_lang', lang);
+    localStorage.setItem('libreetl_lang', lang);
   };
 
   const t = (key: string, vars?: Record<string, string | number>): string => {

@@ -8,34 +8,34 @@
 
 /* ── Injeta os keyframes de animação uma única vez ──────────────────────────── */
 function injectAnimations() {
-  if (document.getElementById('dataq-dialog-styles')) return;
+  if (document.getElementById('libreetl-dialog-styles')) return;
   const style = document.createElement('style');
-  style.id = 'dataq-dialog-styles';
+  style.id = 'libreetl-dialog-styles';
   style.textContent = `
-    @keyframes dataq-overlay-in {
+    @keyframes libreetl-overlay-in {
       from { opacity: 0; }
       to   { opacity: 1; }
     }
-    @keyframes dataq-box-in {
+    @keyframes libreetl-box-in {
       from { opacity: 0; transform: scale(0.92) translateY(12px); }
       to   { opacity: 1; transform: scale(1)    translateY(0);    }
     }
-    @keyframes dataq-overlay-out {
+    @keyframes libreetl-overlay-out {
       from { opacity: 1; }
       to   { opacity: 0; }
     }
-    @keyframes dataq-box-out {
+    @keyframes libreetl-box-out {
       from { opacity: 1; transform: scale(1)    translateY(0);    }
       to   { opacity: 0; transform: scale(0.92) translateY(12px); }
     }
-    .dataq-btn-primary:hover {
+    .libreetl-btn-primary:hover {
       filter: brightness(1.15);
       transform: translateY(-1px);
     }
-    .dataq-btn-secondary:hover {
+    .libreetl-btn-secondary:hover {
       background: var(--secondary-hover) !important;
     }
-    .dataq-btn-danger:hover {
+    .libreetl-btn-danger:hover {
       filter: brightness(1.15);
       transform: translateY(-1px);
     }
@@ -58,7 +58,7 @@ function createOverlay(): HTMLDivElement {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    animation: 'dataq-overlay-in 0.2s ease forwards',
+    animation: 'libreetl-overlay-in 0.2s ease forwards',
     fontFamily: 'inherit',
   });
   return overlay;
@@ -66,8 +66,8 @@ function createOverlay(): HTMLDivElement {
 
 /* ── Dismiss helper (animates out, then removes) ────────────────────────────── */
 function dismiss(overlay: HTMLDivElement, box: HTMLDivElement, cb: () => void) {
-  overlay.style.animation = 'dataq-overlay-out 0.18s ease forwards';
-  box.style.animation     = 'dataq-box-out 0.18s ease forwards';
+  overlay.style.animation = 'libreetl-overlay-out 0.18s ease forwards';
+  box.style.animation     = 'libreetl-box-out 0.18s ease forwards';
   setTimeout(() => {
     if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
     cb();
@@ -90,7 +90,7 @@ function createDialogBox(): HTMLDivElement {
     overflow: 'hidden',
     color: 'var(--foreground, #fafafa)',
     fontFamily: 'inherit',
-    animation: 'dataq-box-in 0.22s cubic-bezier(0.34,1.56,0.64,1) forwards',
+    animation: 'libreetl-box-in 0.22s cubic-bezier(0.34,1.56,0.64,1) forwards',
   });
   return box;
 }
@@ -283,7 +283,7 @@ function createButton(text: string, role: 'primary' | 'secondary' | 'danger'): H
       color: '#ffffff',
       boxShadow: '0 0 20px rgba(99,102,241,0.35)',
     });
-    btn.className = 'dataq-btn-primary';
+    btn.className = 'libreetl-btn-primary';
   } else if (role === 'danger') {
     Object.assign(btn.style, {
       ...baseStyles,
@@ -291,7 +291,7 @@ function createButton(text: string, role: 'primary' | 'secondary' | 'danger'): H
       color: '#ffffff',
       boxShadow: '0 0 20px rgba(239,68,68,0.35)',
     });
-    btn.className = 'dataq-btn-danger';
+    btn.className = 'libreetl-btn-danger';
   } else {
     Object.assign(btn.style, {
       ...baseStyles,
@@ -299,7 +299,7 @@ function createButton(text: string, role: 'primary' | 'secondary' | 'danger'): H
       color: 'var(--foreground, #fafafa)',
       border: '1px solid var(--surface-border, rgba(255,255,255,0.1))',
     });
-    btn.className = 'dataq-btn-secondary';
+    btn.className = 'libreetl-btn-secondary';
   }
 
   return btn;

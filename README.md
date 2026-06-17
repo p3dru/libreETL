@@ -1,11 +1,11 @@
-# DataQ — Zero-Backend ETL Platform
+# LibreETL — Zero-Backend ETL Platform
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
 
-DataQ is a modern, client-side dataset diagnostics and ETL (Extract, Transform, Load) platform built to clean, transform, and merge data **entirely in your browser**. 
+LibreETL is a modern, client-side dataset diagnostics and ETL (Extract, Transform, Load) platform built to clean, transform, and merge data **entirely in your browser**. 
 
 No servers, no backend processing, and no data leaving your machine. 
 
@@ -43,8 +43,8 @@ No servers, no backend processing, and no data leaving your machine.
 First, clone the repository and navigate to the project directory:
 
 ```bash
-git clone https://github.com/your-username/dataq.git
-cd dataq/web
+git clone https://github.com/your-username/libreetl.git
+cd libreetl/web
 ```
 
 Install the dependencies:
@@ -68,7 +68,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!
-Feel free to check [issues page](https://github.com/your-username/dataq/issues).
+Feel free to check [issues page](https://github.com/your-username/libreetl/issues).
 
 ## 📝 License
 

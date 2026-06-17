@@ -21,7 +21,7 @@ const crimsonText = Crimson_Text({
 });
 
 export const metadata: Metadata = {
-  title: 'DataQ - Premium Dataset Diagnosis & ETL',
+  title: 'LibreETL - Premium Dataset Diagnosis & ETL',
   description: 'Upload, analyze, and transform your datasets with a visual ETL pipeline.',
   icons: {
     icon: '/image.png',
