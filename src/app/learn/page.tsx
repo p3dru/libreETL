@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, UploadCloud, Activity, Layout, GitMerge, Download, ShieldAlert, Zap, Save, ChevronRight } from 'lucide-react';
+import { BookOpen, UploadCloud, Activity, Layout, GitMerge, Download, ShieldAlert, Zap, Save, ChevronRight, AlertCircle } from 'lucide-react';
 import { useI18n } from '@/core/i18n/I18nContext';
 
 const Code = ({ children }: { children: React.ReactNode }) => (
